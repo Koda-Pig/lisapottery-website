@@ -48,14 +48,14 @@ export default function Home() {
 
       <div className={styles.gallery}>
         <Image
-          src="/yellow-pot-1.jpeg"
+          src="/gallery/yellow-pot-1.jpeg"
           alt="Yellow vase"
           width={1024}
           height={1280}
           priority
         />
         <Image
-          src="/yellow-pot-2.jpeg"
+          src="/gallery/yellow-pot-2.jpeg"
           alt="Yellow vase"
           width={1024}
           height={1280}
