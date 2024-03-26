@@ -22,6 +22,19 @@
   }
 }
 
+.video {
+  width: 100%;
+  max-width: 100%;
+
+  iframe {
+    aspect-ratio: 16/ 9;
+  }
+}
+
+.wix_site {
+  text-align: center;
+}
+
 .gallery {
   display: grid;
   place-items: center;
@@ -39,15 +52,18 @@
 }
 
 .contact {
-  display: flex;
-  gap: 1rem;
+  &_socials {
+    display: flex;
+    gap: 1rem;
+    place-content: center;
 
-  svg {
-    font-size: 3rem;
-    transition: transform 0.15s ease;
+    svg {
+      font-size: 3rem;
+      transition: transform 0.15s ease;
 
-    &:hover {
-      transform: scale(1.2);
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 }

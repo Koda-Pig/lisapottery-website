@@ -18,6 +18,7 @@ export default function Home() {
       </div>
 
       <div className={styles.description}>
+        <h1>About Lisa Liebermann</h1>
         <p>
           My mother taught me to draw in the sand with a stick. As a little girl
           I fell in love with the mark making process and have used it for
@@ -63,19 +64,43 @@ export default function Home() {
         />
       </div>
 
+      <div className={styles.video}>
+        <iframe
+          width="100%"
+          src="https://www.youtube.com/embed/U3aLoZBXdYY?si=ADUv_LfLKOiAKa84"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      <div className={styles.wix_site}>
+        <h2>See some of my older work here:</h2>
+        <a
+          href="https://lisaliebermann.wixsite.com/pottery"
+          title="Lisa Liebermann's old website"
+        >
+          Lisa Liebermann&apos;s old website
+        </a>
+      </div>
+
       <div className={styles.contact}>
-        <a
-          href="https://www.facebook.com/lisa.liebermannkoter/"
-          title="Lisa Liebermann's Facebook page"
-        >
-          <FaFacebook />
-        </a>
-        <a
-          href="https://www.instagram.com/lisa.lieb.metaphysical.potter/"
-          title="Lisa Liebermann's Instagram page"
-        >
-          <FaInstagram />
-        </a>
+        <h2>Contact me</h2>
+        <div className={styles.contact_socials}>
+          <a
+            href="https://www.facebook.com/lisa.liebermannkoter/"
+            title="Lisa Liebermann's Facebook page"
+          >
+            <FaFacebook />
+          </a>
+          <a
+            href="https://www.instagram.com/lisa.lieb.metaphysical.potter/"
+            title="Lisa Liebermann's Instagram page"
+          >
+            <FaInstagram />
+          </a>
+        </div>
       </div>
     </main>
   );
