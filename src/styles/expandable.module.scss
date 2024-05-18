@@ -1,0 +1,30 @@
+.expandable {
+}
+
+.button {
+  padding: 0;
+  border: none;
+  height: auto;
+  background-color: transparent;
+  margin-bottom: var(--spacer-s);
+  cursor: pointer;
+
+  &.open {
+    // need to add icon here
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 0fr; // collapsed state
+  transition: 0.3s grid-template-rows ease-in-out;
+
+  &.open {
+    grid-template-rows: 1fr; // expanded state
+  }
+
+  > * {
+    overflow: hidden;
+    min-height: 0;
+  }
+}
