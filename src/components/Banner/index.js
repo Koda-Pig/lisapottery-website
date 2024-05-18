@@ -1,4 +1,4 @@
-import styles from "../styles/banner.module.scss";
+import styles from "./banner.module.scss";
 
 export const Banner = ({ children }) => {
   return (

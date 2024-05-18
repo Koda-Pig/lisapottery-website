@@ -9,10 +9,10 @@ const processIcons = (icons, iconsDir, outputFilename) => {
     const iconPath = path.join(iconsDir, icon);
     const svgContent = fs.readFileSync(iconPath, "utf8");
     const encodedSVG = encodeURIComponent(svgContent);
-    return `  ${icon.replace(
+    return ` ${icon.replace(
       ".svg",
       ""
-    )}:\n    url("data:image/svg+xml,${encodedSVG}")`;
+    )}:\n url("data:image/svg+xml,${encodedSVG}")`;
   });
 
   const sassContent = `$icons: (\n${iconArray.join(",\n")}\n);`;
@@ -21,16 +21,5 @@ const processIcons = (icons, iconsDir, outputFilename) => {
     sassContent
   );
 };
-const generateIconSchema = (icons) => {
-  const iconTypes = icons.map((icon) => icon.replace(".svg", ""));
-  const iconSchemaContent = `export type IconSchema = {iconName:  ${iconTypes
-    .map((icon) => `'${icon}'`)
-    .join(" | ")}};`;
-  fs.writeFileSync(
-    path.join(__dirname, "src", "components", "icon", "icon-schema.ts"),
-    iconSchemaContent
-  );
-};
 
-generateIconSchema(icons);
 processIcons(icons, iconsDir, "icon-vars.scss");

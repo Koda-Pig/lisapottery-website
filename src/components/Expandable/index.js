@@ -1,9 +1,9 @@
 "use client";
 import { useState, useId } from "react";
-import styles from "../styles/expandable.module.scss";
+import styles from "./expandable.module.scss";
 import { Icon } from "@/components/Icon";
 
-export const Expandable = ({ title, label, content, icon }) => {
+export const Expandable = ({ title, label, content, icon, centered }) => {
   const [open, setOpen] = useState(false);
   const id = `${label}-${useId()}`;
 
@@ -11,7 +11,9 @@ export const Expandable = ({ title, label, content, icon }) => {
     <div className={styles.expandable}>
       <button
         type="button"
-        className={`${styles.button} ${open ? styles.open : ""}`}
+        className={`${styles.button} ${open ? styles.open : ""} ${
+          centered ? styles.centered : ""
+        }`}
         onClick={() => setOpen(!open)}
         aria-controls={id}
         aria-expanded={open}

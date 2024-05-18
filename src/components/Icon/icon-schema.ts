@@ -1,1 +1,0 @@
-export type IconSchema = {iconName:  'chevron-down' | 'instagram' | 'youtube'};

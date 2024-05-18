@@ -1,9 +1,10 @@
-import styles from "../styles/banner.module.scss";
-import { Expandable } from "./Expandable";
+import { Expandable } from "@/components/Expandable";
+import styles from "./introduction.module.scss";
 
 export const Introduction = () => {
   return (
     <div className={styles.introduction}>
+      <h1>I am a narrative Potter. I choose the vessel to tell my story.</h1>
       <p>
         My mother taught me to draw in the sand with a stick. As a little girl I
         fell in love with the mark making process and have used it for

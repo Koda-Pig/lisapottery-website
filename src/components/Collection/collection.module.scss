@@ -1,0 +1,37 @@
+.collection {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  gap: var(--spacer-xs);
+
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+
+  &:hover {
+    .image__wrapper {
+      &:not(:hover) {
+        filter: blur(2px);
+      }
+    }
+  }
+
+  .image__wrapper {
+    line-height: 0;
+    transition-property: filter, transform, box-shadow;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 #0000;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}

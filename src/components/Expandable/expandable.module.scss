@@ -18,11 +18,16 @@
     }
   }
 
+  &.centered {
+    width: 100%;
+    justify-content: center;
+  }
+
   i {
     mask-size: 24px;
     mask-position: center;
     transition: 0.3s transform ease-in-out;
-    background-color: var(--color-sienna);
+    background-color: var(--color-iron-ore);
   }
 }
 

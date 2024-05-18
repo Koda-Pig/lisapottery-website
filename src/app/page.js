@@ -1,13 +1,11 @@
 import styles from "../styles/page.module.scss";
 import Image from "next/image";
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
 import { Introduction } from "@/components/Introduction";
 import { Expandable } from "@/components/Expandable";
+import { Icon } from "@/components/Icon";
+import { Collection } from "@/components/Collection";
 
 export default function Home() {
-  // console.log(Icon);
-
   return (
     <main className={styles.main}>
       <div class={styles.logo}>
@@ -17,6 +15,16 @@ export default function Home() {
           alt="Lisa Pottery logo"
           width={300}
           height={171}
+          priority
+        />
+      </div>
+
+      <div className={styles.featured__image}>
+        <Image
+          src="/images/gallery/vase-1.png"
+          alt="Yellow vase"
+          width={1024}
+          height={479}
           priority
         />
       </div>
@@ -34,64 +42,45 @@ export default function Home() {
         ></iframe>
       </section>
 
-      <h2>Gallery</h2>
+      <h2>Collection</h2>
 
-      <div className={styles.gallery}>
-        <Image
-          src="/gallery/yellow-pot-1.jpeg"
-          alt="Yellow vase"
-          width={1024}
-          height={1280}
-          priority
-        />
-        <Image
-          src="/gallery/yellow-pot-2.jpeg"
-          alt="Yellow vase"
-          width={1024}
-          height={1280}
-          priority
-        />
-      </div>
+      <Collection />
 
       <section className={styles.history}>
         <Expandable
-          icon={true}
           title={<h2>History</h2>}
+          label="history"
+          icon={true}
+          centered={true}
           content={<div>Hi mom</div>}
         />
       </section>
 
       <div className={styles.contact}>
         <Expandable
-          icon={true}
           title={<h2>Contact</h2>}
+          label="contact"
+          icon={true}
+          centered={true}
           content={
-            <div className={styles.contact_socials}>
+            <div className={styles.contact__socials}>
               <a
-                href="https://www.facebook.com/lisa.liebermannkoter/"
-                title="Lisa Liebermann's Facebook page"
+                href="https://www.youtube.com/@potcast..."
+                title="Lisa Liebermann's Potcast Youtube page"
               >
-                <FaFacebook />
+                <Icon iconName={"youtube"} />
+                <h3>Youtube</h3>
               </a>
               <a
                 href="https://www.instagram.com/lisa.lieb.metaphysical.potter/"
                 title="Lisa Liebermann's Instagram page"
               >
-                <FaInstagram />
+                <Icon iconName={"instagram"} />
+                <h3>Instagram</h3>
               </a>
             </div>
           }
         />
-      </div>
-
-      <div className={styles.wix_site}>
-        <h2>See some of my older work here:</h2>
-        <a
-          href="https://lisaliebermann.wixsite.com/pottery"
-          title="Lisa Liebermann's old website"
-        >
-          Lisa Liebermann&apos;s old website
-        </a>
       </div>
     </main>
   );
