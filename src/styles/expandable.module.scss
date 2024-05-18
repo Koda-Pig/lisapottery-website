@@ -8,9 +8,21 @@
   background-color: transparent;
   margin-bottom: var(--spacer-s);
   cursor: pointer;
+  display: flex;
+  gap: var(--spacer-s);
+  align-items: center;
 
   &.open {
-    // need to add icon here
+    i {
+      transform: rotate3d(1, 0, 0, 0.5turn);
+    }
+  }
+
+  i {
+    mask-size: 24px;
+    mask-position: center;
+    transition: 0.3s transform ease-in-out;
+    background-color: var(--color-sienna);
   }
 }
 

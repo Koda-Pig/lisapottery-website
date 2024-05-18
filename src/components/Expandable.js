@@ -1,8 +1,9 @@
 "use client";
 import { useState, useId } from "react";
 import styles from "../styles/expandable.module.scss";
+import { Icon } from "@/components/Icon";
 
-export const Expandable = ({ title, label, content }) => {
+export const Expandable = ({ title, label, content, icon }) => {
   const [open, setOpen] = useState(false);
   const id = `${label}-${useId()}`;
 
@@ -16,6 +17,7 @@ export const Expandable = ({ title, label, content }) => {
         aria-expanded={open}
       >
         {title}
+        {icon && <Icon iconName={"chevron-down"} />}
       </button>
       <section
         className={`${styles.wrapper} ${open ? styles.open : ""}`}

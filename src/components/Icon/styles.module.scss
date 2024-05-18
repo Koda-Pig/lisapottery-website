@@ -1,0 +1,25 @@
+@use "./icon-vars.scss" as iconset;
+
+.icon {
+  // Allows setting icon size using font size
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  line-height: 6px;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  // Allows setting icon color using background color
+  background-color: var(--color-eigengrau);
+
+  // Icons size classes to be included when other sizes of icons are found in the design
+  &--large {
+    font-size: 40px;
+  }
+}
+
+@each $name, $url in iconset.$icons {
+  .icon--#{$name} {
+    mask-image: $url;
+  }
+}
