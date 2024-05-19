@@ -1,11 +1,16 @@
 "use client";
 import Image from "next/image";
 import styles from "./collection.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Icon } from "../Icon";
 
 export const Collection = () => {
   const [selected, setSelected] = useState(null);
+  const [galleryOpen, setGalleryOpen] = useState(false);
+
+  useEffect(() => {
+    if (selected !== null) setGalleryOpen(true);
+  }, [selected]);
 
   const handlePrevious = () => {
     if (selected === null) return;
@@ -21,20 +26,25 @@ export const Collection = () => {
     );
   };
 
+  const handleClose = () => {
+    setSelected(null);
+    setGalleryOpen(false);
+  };
+
   const images = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-    { id: 5 },
-    { id: 6 },
-    { id: 7 },
-    { id: 8 },
-    { id: 9 }
+    { id: 1, src: "/images/gallery/placeholders/placeholder1.jpg" },
+    { id: 2, src: "/images/gallery/placeholders/placeholder2.jpg" },
+    { id: 3, src: "/images/gallery/placeholders/placeholder3.jpg" },
+    { id: 4, src: "/images/gallery/placeholders/placeholder4.jpg" },
+    { id: 5, src: "/images/gallery/placeholders/placeholder5.jpg" },
+    { id: 6, src: "/images/gallery/placeholders/placeholder6.jpg" },
+    { id: 7, src: "/images/gallery/placeholders/placeholder7.jpg" },
+    { id: 8, src: "/images/gallery/placeholders/placeholder8.jpg" },
+    { id: 9, src: "/images/gallery/placeholders/placeholder9.jpg" }
   ];
 
   return (
-    <div
+    <section
       className={`${styles.collection} ${
         selected !== null ? styles.has_selected : ""
       }`}
@@ -44,9 +54,7 @@ export const Collection = () => {
         type="button"
         title="close"
         className={`${styles.button} ${styles.button_close}`}
-        onClick={() => {
-          setSelected(null);
-        }}
+        onClick={handleClose}
       >
         <Icon iconName="close" />
       </button>
@@ -78,8 +86,8 @@ export const Collection = () => {
             onClick={() => setSelected(i)}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`/images/gallery/placeholders/placeholder${image.id}.jpg`}
+            <Image
+              src={image.src}
               alt="Yellow vase"
               width={1024}
               height={1280}
@@ -89,22 +97,29 @@ export const Collection = () => {
       </div>
 
       {/* fullwidth images */}
-      {images.map((image, i) => (
-        <div
-          className={`${styles.static_image} ${
-            i === selected ? styles.selected : ""
-          }`}
-          key={image.id}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`/images/gallery/placeholders/placeholder${image.id}.jpg`}
-            alt="Yellow vase"
-            width={1024}
-            height={1280}
-          />
-        </div>
-      ))}
-    </div>
+      <div
+        className={`${styles.fullscreen_gallery} ${
+          galleryOpen ? styles.slide_transition_enabled : ""
+        }`}
+        style={{ transform: `translateX(-${selected * 100}%)` }}
+      >
+        {images.map((image, i) => (
+          <div
+            className={`${styles.static_image} ${
+              i === selected ? styles.selected : ""
+            }`}
+            key={image.id}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <Image
+              src={image.src}
+              alt="Yellow vase"
+              width={1024}
+              height={1280}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
