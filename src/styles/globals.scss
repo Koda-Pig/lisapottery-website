@@ -11,7 +11,9 @@
   --color-cobit: #22394c;
   --color-iron-ore: #74330f;
   --color-gold-lustre: #956c00;
+  --color-gold-lustre-10: #956c001a;
   --color-turquoise: #4f8691;
+  --color-porcelain: #fafafa;
 
   // Spacing
   --spacer-xxs: 4px;
@@ -35,6 +37,7 @@ html,
 body {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
+  scrollbar-width: thin;
 }
 
 body {

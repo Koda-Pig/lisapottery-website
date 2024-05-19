@@ -41,7 +41,7 @@ export const Header = () => {
           <Image
             src="/logo-upper.svg"
             alt="Lisa Liebermann logo upper"
-            width={362}
+            width={510}
             height={100}
             priority
           />
@@ -49,7 +49,7 @@ export const Header = () => {
         <div className={`${styles.menu} ${hamburgerOpen ? styles.open : ""}`}>
           <ul className={styles.menu_inner}>
             <li>
-              <a href="#home">Home</a>
+              <a href="#top">Home</a>
             </li>
             <li>
               <a href="#collection">Collection</a>
