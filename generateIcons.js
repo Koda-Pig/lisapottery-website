@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const iconsDir = path.join(__dirname, "public", "images", "icons");
-const icons = fs.readdirSync(iconsDir);
+const icons = fs.readdirSync(iconsDir).filter((file) => file.endsWith(".svg"));
 
 const processIcons = (icons, iconsDir, outputFilename) => {
   const iconArray = icons.map((icon) => {

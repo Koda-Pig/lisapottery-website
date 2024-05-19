@@ -1,4 +1,4 @@
-@use "./fonts.module.scss" as fonts;
+@use "./fonts" as fonts;
 @import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap");
 
 :root {
@@ -7,16 +7,21 @@
 
   // Colors
   --color-eigengrau: #16161a;
+  --color-dark: #3d3d3d;
   --color-cobit: #22394c;
   --color-iron-ore: #74330f;
   --color-gold-lustre: #956c00;
+  --color-turquoise: #4f8691;
 
   // Spacing
-  --spacer-xs: 4px;
-  --spacer-s: 8px;
-  --spacer-m: 16px;
+  --spacer-xxs: 4px;
+  --spacer-xs: 8px;
+  --spacer-s: 16px;
+  --spacer-m: 24px;
   --spacer-l: 32px;
-  --spacer-xl: 64px;
+  --spacer-xl: 40px;
+  --spacer-xxl: 48px;
+  --spacer-xxxl: 56px;
 }
 
 * {
@@ -55,6 +60,15 @@ p {
 a {
   color: inherit;
   text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition-property: color, border-color;
+  transition-duration: 0.15s;
+  padding-bottom: 0.1em;
+
+  &:hover {
+    border-color: inherit;
+    color: var(--color-gold-lustre);
+  }
 }
 
 button {

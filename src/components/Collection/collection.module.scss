@@ -7,7 +7,7 @@
 
   .grid {
     display: grid;
-    gap: var(--spacer-xs);
+    gap: var(--spacer-xxs);
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 
     &:hover {
@@ -46,10 +46,21 @@
     width: 32px;
     display: grid;
     place-items: center;
+    transform-origin: center;
+
+    &:hover {
+      i {
+        background-color: var(--color-iron-ore);
+      }
+    }
+
+    i {
+      transition: 0.2s background-color ease;
+    }
 
     &_close {
-      top: var(--spacer-m);
-      left: var(--spacer-m);
+      top: var(--spacer-s);
+      left: var(--spacer-s);
     }
 
     &_centered {
@@ -58,11 +69,11 @@
     }
 
     &_previous {
-      left: var(--spacer-m);
+      left: var(--spacer-s);
     }
 
     &_next {
-      right: var(--spacer-m);
+      right: var(--spacer-s);
     }
   }
 

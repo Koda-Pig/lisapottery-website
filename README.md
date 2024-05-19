@@ -35,6 +35,10 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Icon source
+
+https://www.svgrepo.com/collection/gentlecons-interface-icons/
+
 ## Todo List
 
 - [] properly size and configure <Image>'s

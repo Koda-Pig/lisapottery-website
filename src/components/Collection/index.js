@@ -44,7 +44,7 @@ export const Collection = () => {
   ];
 
   return (
-    <section
+    <div
       className={`${styles.collection} ${
         selected !== null ? styles.has_selected : ""
       }`}
@@ -115,6 +115,6 @@ export const Collection = () => {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };

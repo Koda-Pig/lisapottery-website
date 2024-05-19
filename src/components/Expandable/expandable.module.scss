@@ -6,10 +6,10 @@
   border: none;
   height: auto;
   background-color: transparent;
-  margin-bottom: var(--spacer-s);
+  margin-bottom: var(--spacer-xs);
   cursor: pointer;
   display: flex;
-  gap: var(--spacer-s);
+  gap: var(--spacer-xs);
   align-items: center;
 
   &.open {
