@@ -1,30 +1,76 @@
 .collection {
-  display: grid;
-  place-items: center;
-  place-content: center;
-  gap: var(--spacer-xs);
+  position: relative;
 
-  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  .grid {
+    display: grid;
+    gap: var(--spacer-xs);
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 
-  &:hover {
-    .image__wrapper {
-      &:not(:hover) {
+    &:hover {
+      .image_wrapper:not(:hover) {
         filter: blur(2px);
       }
     }
   }
 
-  .image__wrapper {
+  .button {
+    padding: 0;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+    background-color: white;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    display: grid;
+    place-items: center;
+
+    &_close {
+      top: var(--spacer-m);
+      left: var(--spacer-m);
+    }
+
+    &_centered {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &_previous {
+      left: var(--spacer-m);
+    }
+
+    &_next {
+      right: var(--spacer-m);
+    }
+  }
+
+  .image_wrapper {
     line-height: 0;
-    transition-property: filter, transform, box-shadow;
-    transition-duration: 0.3s;
+    transition-property: transform, box-shadow, filter;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
     cursor: pointer;
-    box-shadow: 0 0 0 0 #0000;
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
       box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4);
       z-index: 1;
+      filter: none;
+    }
+  }
+
+  .static_image {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 2;
+
+    &.selected {
+      opacity: 1;
+      pointer-events: all;
     }
   }
 
@@ -33,5 +79,27 @@
     height: auto;
     aspect-ratio: 1;
     object-fit: cover;
+  }
+
+  &.has_selected {
+    .grid {
+      pointer-events: none;
+    }
+
+    .button {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .image_wrapper {
+      // necessary or no?
+      transform: scale(1);
+      box-shadow: none;
+      filter: none;
+    }
+
+    .static_image {
+      // transition-duration: 0s;
+    }
   }
 }
