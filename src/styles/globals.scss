@@ -25,6 +25,11 @@
   margin: 0;
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Kaiti TC", serif;
   font-size: 16px;

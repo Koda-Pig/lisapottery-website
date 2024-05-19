@@ -32,15 +32,15 @@ export const Collection = () => {
   };
 
   const images = [
-    { id: 1, src: "/images/gallery/placeholders/placeholder1.jpg" },
-    { id: 2, src: "/images/gallery/placeholders/placeholder2.jpg" },
-    { id: 3, src: "/images/gallery/placeholders/placeholder3.jpg" },
-    { id: 4, src: "/images/gallery/placeholders/placeholder4.jpg" },
-    { id: 5, src: "/images/gallery/placeholders/placeholder5.jpg" },
-    { id: 6, src: "/images/gallery/placeholders/placeholder6.jpg" },
-    { id: 7, src: "/images/gallery/placeholders/placeholder7.jpg" },
-    { id: 8, src: "/images/gallery/placeholders/placeholder8.jpg" },
-    { id: 9, src: "/images/gallery/placeholders/placeholder9.jpg" }
+    { id: 1, src: "/images/gallery/vase-1.jpg" },
+    { id: 2, src: "/images/gallery/vase-2.jpg" },
+    { id: 3, src: "/images/gallery/vase-3.jpg" },
+    { id: 4, src: "/images/gallery/vase-4.jpg" },
+    { id: 5, src: "/images/gallery/vase-5.jpg" },
+    { id: 6, src: "/images/gallery/vase-6.jpg" },
+    { id: 7, src: "/images/gallery/vase-7.jpg" },
+    { id: 8, src: "/images/gallery/vase-8.jpg" },
+    { id: 9, src: "/images/gallery/vase-9.jpg" }
   ];
 
   return (
@@ -86,12 +86,7 @@ export const Collection = () => {
             onClick={() => setSelected(i)}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <Image
-              src={image.src}
-              alt="Yellow vase"
-              width={1024}
-              height={1280}
-            />
+            <Image src={image.src} alt="Yellow vase" width={248} height={248} />
           </div>
         ))}
       </div>
