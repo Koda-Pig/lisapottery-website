@@ -4,6 +4,7 @@
   overflow: hidden;
   max-width: 760px;
   margin-inline: auto;
+  isolation: isolate;
 
   .grid {
     display: grid;

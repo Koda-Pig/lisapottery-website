@@ -3,22 +3,16 @@ import Image from "next/image";
 import { Expandable } from "@/components/Expandable";
 import { Icon } from "@/components/Icon";
 import { Collection } from "@/components/Collection";
+import { Header, HeaderLogoStatic } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <main className={styles.main}>
-        <section className={styles.logo}>
-          <Image
-            src="/logo.svg"
-            alt="Lisa Pottery logo"
-            width={300}
-            height={171}
-            priority
-          />
-        </section>
+      <Header />
+      <HeaderLogoStatic />
 
+      <main className={styles.main}>
         <section className={styles.featured_image}>
           <Image
             src="/images/gallery/vase-1.jpg"
@@ -110,7 +104,10 @@ export default function Home() {
           ></iframe>
         </section>
 
-        <section className={`${styles.about} ${styles.text_section}`}>
+        <section
+          className={`${styles.about} ${styles.text_section}`}
+          id="about"
+        >
           <h2>About</h2>
           <p>
             My mother taught me to draw in the sand with a stick. As a little
