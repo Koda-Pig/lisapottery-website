@@ -1,0 +1,27 @@
+@use "../../styles/layout" as layout;
+
+.footer {
+  overflow: hidden;
+
+  &_inner {
+    @extend .wrapper;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-block: var(--spacer-xxl);
+
+    .logo {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 44%;
+        left: -50vw;
+        width: 100in;
+        height: 1px;
+        background-color: var(--color-gold-lustre);
+        z-index: -1;
+      }
+    }
+  }
+}

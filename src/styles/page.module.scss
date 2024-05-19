@@ -1,4 +1,5 @@
 @use "./breakpoints" as bp;
+@use "./layout" as layout;
 
 .outlined {
   padding: var(--spacer-xs);
@@ -6,12 +7,9 @@
 }
 
 .main {
+  @extend .wrapper;
   display: flex;
   flex-direction: column;
-  padding: var(--spacer-s);
-  min-height: 100vh;
-  max-width: var(--max-width);
-  margin-inline: auto;
 
   h2 {
     text-align: center;
