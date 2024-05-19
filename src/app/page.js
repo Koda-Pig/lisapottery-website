@@ -105,8 +105,8 @@ export default function Home() {
         </section>
 
         <section
-          className={`${styles.about} ${styles.text_section}`}
           id="about"
+          className={`${styles.about} ${styles.text_section}`}
         >
           <h2>About</h2>
           <p>

@@ -44,3 +44,5 @@ https://www.svgrepo.com/collection/gentlecons-interface-icons/
 - [] properly size and configure <Image>'s
 - [] upload real content
 - [] smooth gallery animation when switching from last to first image
+- [] implement loader in gallery
+- [] add back to top button

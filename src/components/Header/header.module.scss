@@ -1,8 +1,6 @@
 @use "../../styles/layout" as layout;
 @use "../../styles/breakpoints" as bp;
 
-$header-height: 170px;
-
 %logo-styles {
   max-width: 100%;
   height: auto;
@@ -80,20 +78,18 @@ $header-height: 170px;
     }
 
     .hamburger {
-      padding: 0;
       position: fixed;
-
-      background-color: var(--color-porcelain);
-      border-radius: 50%;
-      border: 1px solid var(--color-gold-lustre-10);
-      box-shadow: 0 4px 4px var(--color-gold-lustre-10),
-        inset 0 4px 4px var(--color-gold-lustre-10);
-
-      right: var(--spacer-xxs);
-      top: var(--spacer-xxs);
+      top: var(--spacer-xs);
+      right: var(--spacer-xs);
       z-index: 2;
       width: 48px;
       height: 48px;
+      padding: 0;
+      background-color: var(--color-porcelain);
+      border: 1px solid var(--color-gold-lustre-10);
+      border-radius: 50%;
+      box-shadow: 0 4px 4px var(--color-gold-lustre-10),
+        inset 0 4px 4px var(--color-gold-lustre-10);
 
       svg {
         height: 100%;
@@ -145,7 +141,7 @@ $header-height: 170px;
   // desktop
   @media screen and (min-width: bp.$lg) {
     background-color: white;
-    box-shadow: 0 3px 3px rgba(255, 255, 255, 1);
+    // box-shadow: 0 3px 3px rgba(255, 255, 255, 1);
     z-index: 1;
     position: fixed;
     top: 0;
@@ -177,7 +173,7 @@ $header-height: 170px;
 
   @media screen and (min-width: bp.$lg) {
     max-width: 1200px;
-    margin-top: $header-height;
+    margin-top: var(--header-height);
   }
 
   img {
