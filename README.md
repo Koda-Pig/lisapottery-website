@@ -46,3 +46,4 @@ https://www.svgrepo.com/collection/gentlecons-interface-icons/
 - [] smooth gallery animation when switching from last to first image
 - [] implement loader in gallery
 - [] add back to top button
+- [] add slide in animations to sections
