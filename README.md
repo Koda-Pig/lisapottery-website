@@ -24,9 +24,10 @@ https://www.figma.com/design/qtT9y2OQcYQSf35XBu1NpP/Lisa-Website?node-id=197-87&
 
 ## Todo List
 
-- [] properly size and configure <Image>'s
 - [] upload real content
-- [] smooth gallery animation when switching from last to first image
+- [] properly size and configure <Image>'s
 - [] implement loader in gallery
 - [] add back to top button
-- [] add slide in animations to sections
+- [x] add slide in animations to sections
+- [] adjust header behavior on scroll down
+- [] smooth gallery animation when switching from last to first image

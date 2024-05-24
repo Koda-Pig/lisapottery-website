@@ -1,5 +1,7 @@
+"use client";
 import styles from "./page.module.scss";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { Introduction } from "@/components/Introduction";
 import { Expandable } from "@/components/Expandable";
 import { Icon } from "@/components/Icon";
@@ -7,14 +9,55 @@ import { Collection } from "@/components/Collection";
 import { Header, HeaderLogoStatic } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
+const useIntersectionObserver = (elements, callback) => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            callback(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 } // Adjust threshold as needed
+    );
+
+    elements.forEach((element) => {
+      if (element.current) {
+        observer.observe(element.current);
+      }
+    });
+
+    return () => {
+      elements.forEach((element) => {
+        if (element.current) {
+          observer.unobserve(element.current);
+        }
+      });
+    };
+  }, [elements, callback]);
+};
+
 export default function Home() {
+  const collectionRef = useRef(null);
+  const ctaRef = useRef(null);
+  const videoRef = useRef(null);
+  const aboutRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const refs = [collectionRef, ctaRef, videoRef, aboutRef, contactRef];
+
+  useIntersectionObserver(refs, (element) => {
+    element.classList.add(styles.show);
+  });
+
   return (
     <>
       <Header />
       <HeaderLogoStatic />
 
       <main className={styles.main}>
-        <section id="introduction">
+        <section id="introduction" className="slide-up">
           <Introduction
             title="I am a narrative Potter. I choose the vessel to tell my story."
             image1={{
@@ -42,31 +85,36 @@ export default function Home() {
           />
         </section>
 
-        <section className={styles.collection} id="collection">
+        <section
+          ref={collectionRef}
+          className={`slide-up ${styles.collection}`}
+          id="collection"
+        >
           <h2>Collection</h2>
           <Collection />
         </section>
 
-        <section className={styles.cta} id="cta">
+        <section ref={ctaRef} className={`slide-up ${styles.cta}`} id="cta">
           <a className={styles.cta_button} href="#contact">
             Contact
           </a>
         </section>
 
-        <section className={styles.video}>
+        <section ref={videoRef} className={`slide-up ${styles.video}`}>
           <iframe
             width="100%"
             src="https://www.youtube.com/embed/U3aLoZBXdYY?si=ADUv_LfLKOiAKa84"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerolicy="strict-origin-when-cross-origin"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
         </section>
 
         <section
           id="about"
-          className={`${styles.about} ${styles.text_section}`}
+          ref={aboutRef}
+          className={`slide-up ${styles.about} ${styles.text_section}`}
         >
           <h2>About</h2>
           <p>
@@ -124,7 +172,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.contact} id="contact">
+        <section
+          ref={contactRef}
+          className={`slide-up ${styles.contact}`}
+          id="contact"
+        >
           <h2>Contact</h2>
           <div className={styles.contact_socials}>
             <div>

@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export const Header = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const [navTop, setNavTop] = useState(0);
 
   useEffect(() => {
     const doc = document.documentElement;
@@ -16,8 +17,22 @@ export const Header = () => {
     };
   }, [hamburgerOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setNavTop(0 - window.scrollY);
+      if (window.scrollY > 40) {
+        setNavTop(-40);
+      } else {
+        if (window.scrollY > 40) return;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   return (
-    <header className={styles.header}>
+    <header className={styles.header} style={{ "--top": `${navTop}px` }}>
       <button
         className={`${styles.hamburger} ${hamburgerOpen ? styles.open : ""}`}
         onClick={() => setHamburgerOpen(!hamburgerOpen)}
