@@ -1,5 +1,6 @@
 import styles from "./page.module.scss";
 import Image from "next/image";
+import { Introduction } from "@/components/Introduction";
 import { Expandable } from "@/components/Expandable";
 import { Icon } from "@/components/Icon";
 import { Collection } from "@/components/Collection";
@@ -13,72 +14,31 @@ export default function Home() {
       <HeaderLogoStatic />
 
       <main className={styles.main}>
-        <section className={styles.featured_image}>
-          <Image
-            src="/images/featured-vase.jpg"
-            alt="Yellow vase"
-            width={1024}
-            height={479}
-            priority
-          />
-        </section>
-
-        <section className={styles.text_section} id="introduction">
-          <h1>
-            I am a narrative Potter. I choose the vessel to tell my story.
-          </h1>
-          <p>
-            The quality of the vessel tells a story that is never all seen from
-            one perspective. There is always something around the corner, some
-            element of...
-          </p>
-          <Expandable
-            title="Read more"
-            label="read-more-introduction"
-            content={
-              <p>
-                surprise hidden in the design. The experience of it is
-                immersive. You can turn it around, look inside, fill it up and
-                empty it again. A vessel expresses time in a different way to
-                our usual linear calendars. It turns around like our earth and
-                we are reminded of the cyclical nature of seasons and of time.
-              </p>
-            }
-          />
-        </section>
-
-        <section className={styles.image_pair} id="image-pair">
-          <Image
-            src="/images/gallery/vase-7.jpg"
-            alt="Blue vase"
-            width={2304}
-            height={1728}
-            className={styles.image_first}
-          />
-          <Image
-            src="/images/gallery/vase-7.jpg"
-            alt="Green vase"
-            width={2304}
-            height={1728}
-            className={styles.image_second}
-          />
-        </section>
-
-        <section className={styles.text_section} id="text-section">
-          <p>
-            It is my aim to capture specific moments in time by drawing on the
-            archetypal myths that accompany various changes in the sky. My
-            art...
-          </p>
-          <Expandable
-            title="Read more"
-            label="read-more-goals"
-            content={
-              <p>
-                is all related to personal responses and traditional
-                astrological meanings for fleeting moments in time.
-              </p>
-            }
+        <section id="introduction">
+          <Introduction
+            title="I am a narrative Potter. I choose the vessel to tell my story."
+            image1={{
+              src: "/images/gallery/vase-7.jpg",
+              alt: "Yellow vase",
+              width: 1024,
+              height: 479
+            }}
+            image2={{
+              src: "/images/gallery/vase-7.jpg",
+              alt: "Yellow vase",
+              width: 508,
+              height: 252
+            }}
+            image3={{
+              src: "/images/gallery/vase-7.jpg",
+              alt: "Yellow vase",
+              width: 508,
+              height: 252
+            }}
+            text1="The quality of the vessel tells a story that is never all seen from one perspective. There is always something around the corner, some element of "
+            text2="surprise hidden in the design. The experience of it is immersive. You can turn it around, look inside, fill it up and empty it again. A vessel expresses time in a different way to our usual linear calendars. It turns around like our earth and we are reminded of the cyclical nature of seasons and of time. "
+            text3="It is my aim to capture specific moments in time by drawing on the archetypal myths that accompany various changes in the sky. My art"
+            text4="is all related to personal responses and traditional astrological meanings for fleeting moments in time."
           />
         </section>
 
@@ -131,7 +91,7 @@ export default function Home() {
                 numerous parallels between humans and pots. Both are vessels,
                 are made from a point of center, fashioned from the inside out,
                 endure vulnerability when opening up and finally, must go
-                through the fire to be transformed.. . . Read More
+                through the fire to be transformed.
               </p>
             }
           />

@@ -1,10 +1,6 @@
 @use "../styles/breakpoints" as bp;
 @use "../styles/layout" as layout;
-
-.outlined {
-  padding: var(--spacer-xs);
-  outline: 1px solid var(--color-gold-lustre);
-}
+@use "../styles/utility" as utility;
 
 .main {
   @extend .wrapper;
@@ -22,17 +18,6 @@
   }
 }
 
-.featured_image {
-  img {
-    @extend .outlined;
-    aspect-ratio: 1024 / 479;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-  }
-}
-
 .text_section {
   h1 {
     text-transform: uppercase;
@@ -41,25 +26,6 @@
   button {
     color: var(--color-gold-lustre);
     text-transform: capitalize;
-  }
-}
-
-.image_pair {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: var(--spacer-xxs);
-  max-width: 100%;
-  overflow: hidden;
-  align-items: center;
-
-  img {
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .image_second {
-    height: 200%;
   }
 }
 

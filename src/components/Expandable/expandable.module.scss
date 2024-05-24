@@ -41,4 +41,8 @@
     overflow: hidden;
     min-height: 0;
   }
+
+  *:last-child {
+    margin: 0;
+  }
 }
