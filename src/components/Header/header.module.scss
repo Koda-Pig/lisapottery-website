@@ -4,12 +4,14 @@
 %logo-styles {
   max-width: 100%;
   height: auto;
+  max-height: 100%;
+  max-width: 60vw;
 }
 
 .header {
   &_inner {
     @extend .wrapper;
-    max-width: 1200px;
+    max-width: bp.$xxl;
     display: flex;
     justify-content: space-between;
     padding-top: var(--spacer-xl);
@@ -18,6 +20,8 @@
   .logo {
     img {
       @extend %logo-styles;
+      max-height: var(--header-height);
+      transition: 0.15s max-height linear;
     }
   }
 
@@ -64,7 +68,8 @@
         transform: translateX(100%);
         flex-direction: column;
         align-items: end;
-        background-color: white;
+        background-color: #fffd;
+        backdrop-filter: blur(3px);
         gap: var(--spacer-xxs);
         width: 50vw;
         max-width: 100%;
@@ -172,8 +177,9 @@
   margin-bottom: var(--spacer-l);
 
   @media screen and (min-width: bp.$lg) {
-    max-width: 1200px;
+    max-width: bp.$xxl;
     margin-top: var(--header-height);
+    opacity: var(--scroll-y, 1);
   }
 
   img {

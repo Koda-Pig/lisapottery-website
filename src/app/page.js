@@ -1,4 +1,4 @@
-import styles from "../styles/page.module.scss";
+import styles from "./page.module.scss";
 import Image from "next/image";
 import { Expandable } from "@/components/Expandable";
 import { Icon } from "@/components/Icon";
@@ -15,7 +15,7 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.featured_image}>
           <Image
-            src="/images/gallery/vase-1.jpg"
+            src="/images/featured-vase.jpg"
             alt="Yellow vase"
             width={1024}
             height={479}

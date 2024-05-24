@@ -1,5 +1,5 @@
-@use "./breakpoints" as bp;
-@use "./layout" as layout;
+@use "../styles/breakpoints" as bp;
+@use "../styles/layout" as layout;
 
 .outlined {
   padding: var(--spacer-xs);
@@ -27,20 +27,20 @@
     @extend .outlined;
     aspect-ratio: 1024 / 479;
     width: 100%;
+    height: auto;
     object-fit: cover;
+    object-position: center;
   }
 }
 
 .text_section {
   h1 {
     text-transform: uppercase;
-    font-size: 1rem;
   }
 
   button {
     color: var(--color-gold-lustre);
     text-transform: capitalize;
-    text-decoration: underline;
   }
 }
 
@@ -168,7 +168,6 @@
     }
 
     h3 {
-      font-size: 1rem;
       color: var(--color-dark);
       margin-bottom: 0;
     }

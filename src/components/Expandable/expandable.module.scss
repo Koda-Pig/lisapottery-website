@@ -1,6 +1,5 @@
 .button {
   padding: 0;
-  border: none;
   height: auto;
   background-color: transparent;
   margin-bottom: var(--spacer-xs);
@@ -8,6 +7,7 @@
   display: flex;
   gap: var(--spacer-xs);
   align-items: center;
+  font-family: var(--secondary-font);
 
   &.open {
     i {

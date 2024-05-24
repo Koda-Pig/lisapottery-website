@@ -1,8 +1,8 @@
 @use "./fonts" as fonts;
-@import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 :root {
-  --max-width: 1100px;
+  --max-width: 1024px;
   --border-radius: 12px;
 
   // Colors
@@ -28,6 +28,12 @@
 
   // Sizing
   --header-height: 170px;
+
+  // Fonts - body
+  --primary-font: "Cormorant", serif;
+
+  // Fonts - headings
+  --secondary-font: "Spectral SC", serif;
 }
 
 * {
@@ -44,7 +50,7 @@ body {
 }
 
 body {
-  font-family: "Kaiti TC", serif;
+  font-family: var(--primary-font);
   font-size: 16px;
   color: var(--color-cobit);
 }
@@ -57,18 +63,38 @@ h5,
 h6 {
   font-weight: 300;
   margin-bottom: 0.5rem;
-  font-family: "Hahmlet", sans-serif;
+  font-family: var(--primary-font);
   color: var(--color-iron-ore);
+  margin-bottom: 1em;
+}
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.4rem;
+}
+h3 {
+  font-size: 1.3rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 1.1rem;
+}
+h6 {
+  font-size: 1rem;
 }
 
 p {
   margin-bottom: var(--spacer-s);
 }
 
-a {
+.link {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border: 1px solid transparent;
+  border-width: 0 0 1px 0;
   transition-property: color, border-color;
   transition-duration: 0.15s;
   padding-bottom: 0.1em;
@@ -77,6 +103,10 @@ a {
     border-color: inherit;
     color: var(--color-gold-lustre);
   }
+}
+
+a {
+  @extend .link;
 }
 
 button {

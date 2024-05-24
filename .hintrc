@@ -10,7 +10,8 @@
           "mask-size",
           "mask-repeat",
           "mask-image",
-          "mask-position"
+          "mask-position",
+          "backdrop-filter"
         ]
       }
     ]

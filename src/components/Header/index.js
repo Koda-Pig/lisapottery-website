@@ -42,7 +42,7 @@ export const Header = () => {
             src="/logo-upper.svg"
             alt="Lisa Liebermann logo upper"
             width={510}
-            height={100}
+            height={128}
             priority
           />
         </div>
@@ -70,11 +70,26 @@ export const Header = () => {
 };
 
 export const HeaderLogoStatic = () => {
+  const [logoOpacity, setlogoOpacity] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const opacity = 1 - (window.scrollY * 6) / window.innerHeight;
+      setlogoOpacity(opacity);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   return (
-    <div className={styles.static_logo}>
+    <div
+      className={styles.static_logo}
+      style={{ "--scroll-y": `${logoOpacity}` }}
+    >
       <Image
         src="/logo-lower.svg"
-        alt="Yellow vase"
+        alt="Lisa Liebermann logo lower"
         width={510}
         height={172}
         priority

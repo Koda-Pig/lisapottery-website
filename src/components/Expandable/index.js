@@ -11,7 +11,7 @@ export const Expandable = ({ title, label, content, icon, centered }) => {
     <div className={styles.expandable}>
       <button
         type="button"
-        className={`${styles.button} ${open ? styles.open : ""} ${
+        className={`link ${styles.button} ${open ? styles.open : ""} ${
           centered ? styles.centered : ""
         }`}
         onClick={() => setOpen(!open)}
