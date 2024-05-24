@@ -64,16 +64,26 @@ export const Header = () => {
         <div className={`${styles.menu} ${hamburgerOpen ? styles.open : ""}`}>
           <ul className={styles.menu_inner}>
             <li>
-              <a href="#top">Home</a>
+              <a onClick={() => setHamburgerOpen(false)} href="#top">
+                Home
+              </a>
             </li>
             <li>
-              <a href="#collection">Collection</a>
+              <a onClick={() => setHamburgerOpen(false)} href="#collection">
+                Collection
+              </a>
             </li>
             <li>
-              <a href="#about">About</a>
+              <a onClick={() => setHamburgerOpen(false)} href="#about">
+                About
+              </a>
             </li>
             <li>
-              <a className={styles.cta} href="#contact">
+              <a
+                onClick={() => setHamburgerOpen(false)}
+                className={styles.cta}
+                href="#contact"
+              >
                 Contact
               </a>
             </li>
