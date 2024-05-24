@@ -133,7 +133,7 @@ export default function Home() {
                 title="Lisa Liebermann's email"
               >
                 <Icon iconName={"email"} />
-                <h3>lisa.lieb.tile@gmail.com</h3>
+                <p>lisa.lieb.tile@gmail.com</p>
               </a>
             </div>
             <div>
@@ -142,7 +142,7 @@ export default function Home() {
                 title="Lisa Liebermann's Instagram page"
               >
                 <Icon iconName={"instagram"} />
-                <h3>Instagram</h3>
+                <p>Instagram</p>
               </a>
             </div>
             <div>
@@ -151,7 +151,7 @@ export default function Home() {
                 title="Lisa Liebermann's Potcast Youtube page"
               >
                 <Icon iconName={"youtube"} />
-                <h3>Youtube</h3>
+                <p>Youtube</p>
               </a>
             </div>
           </div>
