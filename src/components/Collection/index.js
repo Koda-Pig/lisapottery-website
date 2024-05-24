@@ -4,7 +4,8 @@ import styles from "./collection.module.scss";
 import { useState, useEffect } from "react";
 import { Icon } from "../Icon";
 
-export const Collection = () => {
+export const Collection = ({ props }) => {
+  const images = props.images;
   const [selected, setSelected] = useState(null);
   const [galleryOpen, setGalleryOpen] = useState(false);
 
@@ -30,18 +31,6 @@ export const Collection = () => {
     setSelected(null);
     setGalleryOpen(false);
   };
-
-  const images = [
-    { id: 1, src: "/images/gallery/vase-1.jpg" },
-    { id: 2, src: "/images/gallery/vase-2.jpg" },
-    { id: 3, src: "/images/gallery/vase-3.jpg" },
-    { id: 4, src: "/images/gallery/vase-4.jpg" },
-    { id: 5, src: "/images/gallery/vase-5.jpg" },
-    { id: 6, src: "/images/gallery/vase-6.jpg" },
-    { id: 7, src: "/images/gallery/vase-7.jpg" },
-    { id: 8, src: "/images/gallery/vase-8.jpg" },
-    { id: 9, src: "/images/gallery/vase-9.jpg" }
-  ];
 
   return (
     <div
@@ -85,7 +74,6 @@ export const Collection = () => {
             key={image.id}
             onClick={() => setSelected(i)}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <Image src={image.src} alt="Yellow vase" width={248} height={248} />
           </div>
         ))}
@@ -105,7 +93,6 @@ export const Collection = () => {
             }`}
             key={image.id}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <Image
               src={image.src}
               alt="Yellow vase"

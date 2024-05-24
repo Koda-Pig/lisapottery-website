@@ -85,13 +85,28 @@ export default function Home() {
           />
         </section>
 
+        {/* Collection */}
         <section
           ref={collectionRef}
           className={`slide-up ${styles.collection}`}
           id="collection"
         >
           <h2>Collection</h2>
-          <Collection />
+          <Collection
+            props={{
+              images: [
+                { id: 1, src: "/images/gallery/vase-1.jpg" },
+                { id: 2, src: "/images/gallery/vase-2.jpg" },
+                { id: 3, src: "/images/gallery/vase-3.jpg" },
+                { id: 4, src: "/images/gallery/vase-4.jpg" },
+                { id: 5, src: "/images/gallery/vase-5.jpg" },
+                { id: 6, src: "/images/gallery/vase-6.jpg" },
+                { id: 7, src: "/images/gallery/vase-7.jpg" },
+                { id: 8, src: "/images/gallery/vase-8.jpg" },
+                { id: 9, src: "/images/gallery/vase-9.jpg" }
+              ]
+            }}
+          />
         </section>
 
         <section ref={ctaRef} className={`slide-up ${styles.cta}`} id="cta">
