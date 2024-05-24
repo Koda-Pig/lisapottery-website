@@ -48,7 +48,7 @@
       &2 {
         grid-column: span 1;
         h1 {
-          max-width: 442px;
+          max-width: calc(100% - 80px);
         }
       }
       // text section 1

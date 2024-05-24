@@ -74,7 +74,7 @@ export const HeaderLogoStatic = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const opacity = 1 - (window.scrollY * 6) / window.innerHeight;
+      const opacity = 1 - (window.scrollY * 8) / window.innerHeight;
       setlogoOpacity(opacity);
     };
 
