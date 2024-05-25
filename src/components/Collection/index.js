@@ -36,6 +36,8 @@ export const Collection = ({ props }) => {
               const img = new window.Image();
               img.src = image.src;
               img.onload = resolve;
+              img.width = 760;
+              img.height = 760;
             })
         )
       ).then(handleLoading);
