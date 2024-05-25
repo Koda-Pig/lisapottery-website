@@ -54,9 +54,9 @@
 
   &_button {
     margin-inline: auto;
-    border-radius: 8px;
+    border-radius: 10vw;
     text-transform: uppercase;
-    color: var(--color-turquoise);
+    color: var(--color-gold-lustre);
     height: 48px;
     min-width: 160px;
     width: max-content;
@@ -64,11 +64,17 @@
     display: grid;
     place-items: center;
     transition: 0.2s box-shadow ease;
-    box-shadow: 4px 4px 4px -2px #956c001a, inset 4px 4px 4px -2px #956c003d;
+    font-family: var(--secondary-font);
+    letter-spacing: 0.2em;
+    line-height: 3em;
+    border: 2px solid;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-out;
 
     &:hover {
-      box-shadow: -4px -4px 4px -2px #956c001a,
-        inset -4px -4px 4px -2px #956c003d;
+      color: white;
+      background-color: var(--color-gold-lustre);
     }
   }
 }
@@ -132,10 +138,6 @@
 }
 
 .contact {
-  h2 {
-    margin-bottom: var(--spacer-m);
-  }
-
   &_socials {
     display: grid;
     place-items: center;

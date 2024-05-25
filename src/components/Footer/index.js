@@ -1,13 +1,9 @@
 import styles from "./footer.module.scss";
 import Image from "next/image";
 import { Icon } from "@/components/Icon";
-import { useScroll } from "@/components/ScrollContext";
-import { useEffect, useState } from "react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const [atBottom, setAtBottom] = useState(false);
-  const scrollY = useScroll();
 
   return (
     <footer className={styles.footer}>

@@ -8,11 +8,14 @@ export const Header = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const [shiftToTop, setShiftToTop] = useState(false);
   const scrollY = useScroll();
+  const hamburgerClasses = [styles.hamburger, hamburgerOpen ? styles.open : ""];
 
   useEffect(() => {
     const doc = document.documentElement;
     if (hamburgerOpen) doc.classList.add("freeze");
     else doc.classList.remove("freeze");
+
+    window.addEventListener("resize", () => setHamburgerOpen(false));
 
     return () => {
       doc.classList.remove("freeze");
@@ -38,7 +41,7 @@ export const Header = () => {
       className={`${styles.header} ${shiftToTop ? styles.shiftToTop : ""}`}
     >
       <button
-        className={`${styles.hamburger} ${hamburgerOpen ? styles.open : ""}`}
+        className={hamburgerClasses.join(" ")}
         onClick={() => setHamburgerOpen(!hamburgerOpen)}
         aria-controls="navigation"
         aria-expanded={hamburgerOpen}
@@ -113,11 +116,9 @@ export const HeaderLogoStatic = () => {
   });
 
   return (
-    <div
-      className={styles.static_logo}
-      style={{ "--scroll-y": `${logoOpacity}` }}
-    >
+    <div className={styles.static_logo}>
       <Image
+        style={{ "--scroll-y": `${logoOpacity}` }}
         src="/logo-lower.svg"
         alt="Lisa Liebermann logo lower"
         width={510}
