@@ -13,6 +13,22 @@
     padding-block: var(--spacer-xl) var(--spacer-s);
     gap: var(--spacer-m);
 
+    .backToTop {
+      display: grid;
+      place-items: center;
+      transition: 0.2s transform ease, 0.2s border-color ease;
+      width: 40px;
+      background-color: white;
+      transform: translateY(-200%);
+
+      i {
+        background-color: var(--color-gold-lustre);
+        min-width: 0;
+        width: 24px;
+        height: 20px;
+      }
+    }
+
     .logo {
       &::before {
         content: "";

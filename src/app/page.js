@@ -8,7 +8,6 @@ import { Icon } from "@/components/Icon";
 import { Collection } from "@/components/Collection";
 import { Header, HeaderLogoStatic } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { BackToTop } from "@/components/BackToTop";
 import { ScrollProvider } from "@/components/ScrollContext";
 
 const useIntersectionObserver = (elements, callback) => {
@@ -202,20 +201,20 @@ export default function Home() {
           <div className={styles.contact_socials}>
             <div>
               <a
-                href="mailto:lisa.lieb.tile@gmail.com"
-                title="Lisa Liebermann's email"
-              >
-                <Icon iconName={"email"} />
-                <p>lisa.lieb.tile@gmail.com</p>
-              </a>
-            </div>
-            <div>
-              <a
                 href="https://www.instagram.com/lisa.lieb.metaphysical.potter/"
                 title="Lisa Liebermann's Instagram page"
               >
                 <Icon iconName={"instagram"} />
                 <p>Instagram</p>
+              </a>
+            </div>
+            <div>
+              <a
+                href="mailto:lisa.lieb.tile@gmail.com"
+                title="Lisa Liebermann's email"
+              >
+                <Icon iconName={"email"} />
+                <p>lisa.lieb.tile@gmail.com</p>
               </a>
             </div>
             <div>
@@ -233,7 +232,6 @@ export default function Home() {
       <Footer />
 
       {/*Back to top button*/}
-      <BackToTop />
     </ScrollProvider>
   );
 }

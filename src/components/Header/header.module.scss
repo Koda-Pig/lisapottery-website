@@ -9,6 +9,8 @@
 }
 
 .header {
+  --desktop-transition: ease-out 0.3s;
+
   &_inner {
     @extend .wrapper;
     max-width: bp.$xxl;
@@ -21,7 +23,7 @@
     img {
       @extend %logo-styles;
       max-height: var(--header-height);
-      transition: 0.15s max-height linear;
+      transition: max-height var(--desktop-transition);
     }
   }
 
@@ -152,7 +154,7 @@
     top: 0;
     left: 0;
     right: 0;
-    transition: 0.2s top linear;
+    transition: top var(--desktop-transition);
 
     &.shiftToTop {
       top: -40px;
@@ -174,13 +176,13 @@
 
     .logo {
       img {
-        transition: 0.2s max-width linear;
+        transition: max-width var(--desktop-transition);
       }
     }
 
     .menu_inner {
       gap: var(--spacer-l);
-      transition: 0.2s transform linear;
+      transition: transform var(--desktop-transition);
 
       li {
         padding-right: 0;

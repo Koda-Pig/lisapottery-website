@@ -137,10 +137,20 @@
   }
 
   &_socials {
+    display: grid;
+    place-items: center;
     text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: max-content;
+    margin-inline: auto;
+    gap: var(--spacer-m);
+    max-width: 100%;
+
+    @media screen and (max-width: bp.$sm) {
+      grid-template-columns: 1fr;
+    }
 
     a {
-      margin-bottom: var(--spacer-l);
       display: inline-block;
       text-transform: none;
       color: var(--color-dark);
