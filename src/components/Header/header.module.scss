@@ -20,7 +20,7 @@
   }
 
   .logo {
-    img {
+    svg {
       @extend %logo-styles;
       max-height: var(--header-height);
       transition: max-height var(--desktop-transition);
@@ -200,12 +200,12 @@
     max-width: bp.$xxl;
     margin-top: var(--header-height);
 
-    img {
+    svg {
       opacity: var(--scroll-y, 1);
     }
   }
 
-  img {
+  svg {
     @extend %logo-styles;
   }
 }
