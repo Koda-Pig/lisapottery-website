@@ -9,14 +9,18 @@ export const Collection = ({ props }) => {
   const [selected, setSelected] = useState(null);
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [fullWidthLoading, setFullWidthLoading] = useState(false);
 
   useEffect(() => {
     if (selected !== null) setGalleryOpen(true);
   }, [selected]);
 
   useEffect(() => {
-    const handleLoading = () => setLoading(false);
-
+    const handleLoading = () => {
+      // setTimeout(() => {
+      setLoading(false);
+      // }, 10000);
+    };
     if (images.length > 0) {
       setLoading(true);
       Promise.all(
@@ -31,6 +35,15 @@ export const Collection = ({ props }) => {
       ).then(handleLoading);
     }
   }, [images]);
+
+  useEffect(() => {
+    if (selected !== null) {
+      setFullWidthLoading(true);
+      const img = new window.Image();
+      img.src = images[selected].src;
+      img.onload = () => setFullWidthLoading(false);
+    }
+  }, [selected, images]);
 
   const handlePrevious = () => {
     if (selected === null) return;
@@ -110,28 +123,36 @@ export const Collection = ({ props }) => {
           </div>
 
           {/* fullwidth images */}
-          <div
-            className={`${styles.fullscreen_gallery} ${
-              galleryOpen ? styles.slide_transition_enabled : ""
-            }`}
-            style={{ transform: `translateX(-${selected * 100}%)` }}
-          >
-            {images.map((image, i) => (
-              <div
-                className={`${styles.static_image} ${
-                  i === selected ? styles.selected : ""
-                }`}
-                key={image.id}
-              >
-                <Image
-                  src={image.src}
-                  alt="Yellow vase"
-                  width={760}
-                  height={760}
-                />
-              </div>
-            ))}
-          </div>
+          {galleryOpen && (
+            <div
+              className={`${styles.fullscreen_gallery} ${
+                galleryOpen ? styles.slide_transition_enabled : ""
+              }`}
+              style={{ transform: `translateX(-${selected * 100}%)` }}
+            >
+              {fullWidthLoading ? (
+                <div className={styles.loader_wrapper} aria-hidden={true}>
+                  <div className={styles.loader}></div>
+                </div>
+              ) : (
+                images.map((image, i) => (
+                  <div
+                    className={`${styles.static_image} ${
+                      i === selected ? styles.selected : ""
+                    }`}
+                    key={image.id}
+                  >
+                    <Image
+                      src={image.src}
+                      alt="Yellow vase"
+                      width={760}
+                      height={760}
+                    />
+                  </div>
+                ))
+              )}
+            </div>
+          )}
         </>
       )}
     </div>

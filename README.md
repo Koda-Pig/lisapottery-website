@@ -30,6 +30,6 @@ https://www.figma.com/design/qtT9y2OQcYQSf35XBu1NpP/Lisa-Website?node-id=197-87&
 - [x] optimise scroll event listeners
 - [] upload real content
 - [] properly size and configure <Image>'s
-- [] implement loader in gallery
+- [x] implement loader in gallery
 - [] smooth gallery animation when switching from last to first image
 - [] convert to typescript
