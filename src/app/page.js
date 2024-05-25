@@ -63,19 +63,19 @@ export default function Home() {
           <Introduction
             title="I am a narrative Potter. I choose the vessel to tell my story."
             image1={{
-              src: "/images/gallery/vase-7.jpg",
+              src: "/images/gallery/vase-7.webp",
               alt: "Yellow vase",
               width: 1024,
               height: 479
             }}
             image2={{
-              src: "/images/gallery/vase-7.jpg",
+              src: "/images/gallery/vase-7.webp",
               alt: "Yellow vase",
               width: 508,
               height: 252
             }}
             image3={{
-              src: "/images/gallery/vase-7.jpg",
+              src: "/images/gallery/vase-7.webp",
               alt: "Yellow vase",
               width: 508,
               height: 252
@@ -97,15 +97,15 @@ export default function Home() {
           <Collection
             props={{
               images: [
-                { id: 1, src: "/images/gallery/vase-1.jpg" },
-                { id: 2, src: "/images/gallery/vase-2.jpg" },
-                { id: 3, src: "/images/gallery/vase-3.jpg" },
-                { id: 4, src: "/images/gallery/vase-4.jpg" },
-                { id: 5, src: "/images/gallery/vase-5.jpg" },
-                { id: 6, src: "/images/gallery/vase-6.jpg" },
-                { id: 7, src: "/images/gallery/vase-7.jpg" },
-                { id: 8, src: "/images/gallery/vase-8.jpg" },
-                { id: 9, src: "/images/gallery/vase-9.jpg" }
+                { id: 1, src: "/images/gallery/vase-1.webp" },
+                { id: 2, src: "/images/gallery/vase-2.webp" },
+                { id: 3, src: "/images/gallery/vase-3.webp" },
+                { id: 4, src: "/images/gallery/vase-4.webp" },
+                { id: 5, src: "/images/gallery/vase-5.webp" },
+                { id: 6, src: "/images/gallery/vase-6.webp" },
+                { id: 7, src: "/images/gallery/vase-7.webp" },
+                { id: 8, src: "/images/gallery/vase-8.webp" },
+                { id: 9, src: "/images/gallery/vase-9.webp" }
               ]
             }}
           />
@@ -167,7 +167,7 @@ export default function Home() {
           <div className={styles.image_trio}>
             <div className={`${styles.image} ${styles.image1}`}>
               <Image
-                src="/images/family/Mary.jpg"
+                src="/images/family/Mary.webp"
                 alt="Mary Liebermann"
                 width={1481}
                 height={1499}
@@ -175,7 +175,7 @@ export default function Home() {
             </div>
             <div className={`${styles.image} ${styles.image2}`}>
               <Image
-                src="/images/family/Sammy.jpg"
+                src="/images/family/Sammy.webp"
                 alt="Sammy Liebermann"
                 width={1782}
                 height={2960}
@@ -183,7 +183,7 @@ export default function Home() {
             </div>
             <div className={`${styles.image} ${styles.image3}`}>
               <Image
-                src="/images/family/Lisa.jpg"
+                src="/images/family/Lisa.webp"
                 alt="Lisa Liebermann"
                 width={1649}
                 height={1306}

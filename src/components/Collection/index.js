@@ -93,12 +93,7 @@ export const Collection = ({ props }) => {
             }`}
             key={image.id}
           >
-            <Image
-              src={image.src}
-              alt="Yellow vase"
-              width={1024}
-              height={1280}
-            />
+            <Image src={image.src} alt="Yellow vase" width={760} height={760} />
           </div>
         ))}
       </div>
