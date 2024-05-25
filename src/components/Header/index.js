@@ -123,7 +123,6 @@ export const HeaderLogoStatic = () => {
         alt="Lisa Liebermann logo lower"
         width={510}
         height={172}
-        priority
       />
     </div>
   );
