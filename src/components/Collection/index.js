@@ -12,14 +12,20 @@ export const Collection = ({ props }) => {
   const [fullWidthLoading, setFullWidthLoading] = useState(false);
 
   useEffect(() => {
-    if (selected !== null) setGalleryOpen(true);
-  }, [selected]);
+    if (selected !== null) {
+      setGalleryOpen(true);
+      setFullWidthLoading(true);
+      const img = new window.Image();
+      img.src = images[selected].src;
+      img.onload = () => setFullWidthLoading(false);
+    }
+  }, [selected, images]);
 
   useEffect(() => {
     const handleLoading = () => {
       // setTimeout(() => {
       setLoading(false);
-      // }, 10000);
+      // }, 5000);
     };
     if (images.length > 0) {
       setLoading(true);
@@ -35,15 +41,6 @@ export const Collection = ({ props }) => {
       ).then(handleLoading);
     }
   }, [images]);
-
-  useEffect(() => {
-    if (selected !== null) {
-      setFullWidthLoading(true);
-      const img = new window.Image();
-      img.src = images[selected].src;
-      img.onload = () => setFullWidthLoading(false);
-    }
-  }, [selected, images]);
 
   const handlePrevious = () => {
     if (selected === null) return;
