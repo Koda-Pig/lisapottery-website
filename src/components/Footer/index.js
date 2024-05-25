@@ -7,9 +7,6 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer_inner}>
-        <div className={styles.copywrite}>
-          <p>Lisa Liebermann © {currentYear}</p>
-        </div>
         <div className={styles.logo}>
           <Image
             src="/logo-footer.svg"
@@ -17,6 +14,9 @@ export const Footer = () => {
             width={280}
             height={158}
           />
+        </div>
+        <div className={styles.copywrite}>
+          <p>Lisa Liebermann © {currentYear}</p>
         </div>
       </div>
     </footer>

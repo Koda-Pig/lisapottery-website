@@ -8,6 +8,8 @@ import { Icon } from "@/components/Icon";
 import { Collection } from "@/components/Collection";
 import { Header, HeaderLogoStatic } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { BackToTop } from "@/components/BackToTop";
+import { ScrollProvider } from "@/components/ScrollContext";
 
 const useIntersectionObserver = (elements, callback) => {
   useEffect(() => {
@@ -19,7 +21,7 @@ const useIntersectionObserver = (elements, callback) => {
           }
         });
       },
-      { threshold: 0.1 } // Adjust threshold as needed
+      { threshold: 0.1 }
     );
 
     elements.forEach((element) => {
@@ -52,7 +54,7 @@ export default function Home() {
   });
 
   return (
-    <>
+    <ScrollProvider>
       <Header />
       <HeaderLogoStatic />
 
@@ -109,23 +111,26 @@ export default function Home() {
           />
         </section>
 
+        {/* CTA */}
         <section ref={ctaRef} className={`slide-up ${styles.cta}`} id="cta">
           <a className={styles.cta_button} href="#contact">
             Contact
           </a>
         </section>
 
+        {/* Video */}
         <section ref={videoRef} className={`slide-up ${styles.video}`}>
           <iframe
             width="100%"
             src="https://www.youtube.com/embed/U3aLoZBXdYY?si=ADUv_LfLKOiAKa84"
-            title="YouTube video player"
+            title="YouTube video of Lisa Liebermann"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
+            referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
         </section>
 
+        {/* About */}
         <section
           id="about"
           ref={aboutRef}
@@ -187,6 +192,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Contact */}
         <section
           ref={contactRef}
           className={`slide-up ${styles.contact}`}
@@ -225,6 +231,9 @@ export default function Home() {
         </section>
       </main>
       <Footer />
-    </>
+
+      {/*Back to top button*/}
+      <BackToTop />
+    </ScrollProvider>
   );
 }

@@ -1,0 +1,55 @@
+@use "../../styles/breakpoints" as bp;
+
+.backToTop {
+  display: grid;
+  position: fixed;
+  place-items: center;
+  right: 24px;
+  bottom: 24px;
+  transition: 0.2s transform ease;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background-color: white;
+  border-radius: 50%;
+  transition: opacity 0.3s ease-in-out,
+    transform 0.5s cubic-bezier(0.76, 0.45, 0.19, 1.78), bottom 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+
+  transform: translateY(69px);
+  opacity: 0;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+
+  &.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &.bottom {
+    box-shadow: none;
+    bottom: 54px;
+
+    &.wide {
+      bottom: 24px;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  @media screen and (min-width: bp.$md) {
+    // left: 50%;
+    // transform: translateX(-50%);
+  }
+
+  // span {
+  //   color: var(--color-gold-lustre);
+  // }
+
+  i {
+    background-color: var(--color-gold-lustre);
+    width: 100%;
+    min-width: 0;
+  }
+}

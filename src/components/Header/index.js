@@ -2,10 +2,12 @@
 import styles from "./header.module.scss";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useScroll } from "@/components/ScrollContext";
 
 export const Header = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
-  const [navTop, setNavTop] = useState(0);
+  const [shiftToTop, setShiftToTop] = useState(false);
+  const scrollY = useScroll();
 
   useEffect(() => {
     const doc = document.documentElement;
@@ -19,11 +21,11 @@ export const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setNavTop(0 - window.scrollY);
-      if (window.scrollY > 40) {
-        setNavTop(-40);
+      setShiftToTop(0 - scrollY);
+      if (scrollY > 200) {
+        setShiftToTop(true);
       } else {
-        if (window.scrollY > 40) return;
+        setShiftToTop(false);
       }
     };
 
@@ -32,7 +34,9 @@ export const Header = () => {
   });
 
   return (
-    <header className={styles.header} style={{ "--top": `${navTop}px` }}>
+    <header
+      className={`${styles.header} ${shiftToTop ? styles.shiftToTop : ""}`}
+    >
       <button
         className={`${styles.hamburger} ${hamburgerOpen ? styles.open : ""}`}
         onClick={() => setHamburgerOpen(!hamburgerOpen)}
@@ -96,10 +100,11 @@ export const Header = () => {
 
 export const HeaderLogoStatic = () => {
   const [logoOpacity, setlogoOpacity] = useState(1);
+  const scrollY = useScroll();
 
   useEffect(() => {
     const handleScroll = () => {
-      const opacity = 1 - (window.scrollY * 8) / window.innerHeight;
+      const opacity = 1 - (scrollY * 8) / window.innerHeight;
       setlogoOpacity(opacity);
     };
 

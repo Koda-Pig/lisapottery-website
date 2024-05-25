@@ -27,7 +27,9 @@ https://www.figma.com/design/qtT9y2OQcYQSf35XBu1NpP/Lisa-Website?node-id=197-87&
 - [] upload real content
 - [] properly size and configure <Image>'s
 - [] implement loader in gallery
-- [] add back to top button
+- [x] add back to top button
 - [x] add slide in animations to sections
-- [] adjust header behavior on scroll down
+- [x] adjust header behavior on scroll down
 - [] smooth gallery animation when switching from last to first image
+- [] convert to typescript
+- [x] optimise scroll event listeners
