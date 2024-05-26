@@ -31,7 +31,6 @@ export const Introduction = ({
       <div className={`${styles.text_section} ${styles.block_3}`}>
         <p>{text1.trim()}...</p>
         <Expandable
-          title="Read more"
           label="read-more-introduction"
           content={
             <p>
@@ -63,11 +62,7 @@ export const Introduction = ({
         id="text-section"
       >
         <p>{text3.trim()}...</p>
-        <Expandable
-          title="Read more"
-          label="read-more-goals"
-          content={<p>{text4}</p>}
-        />
+        <Expandable label="read-more-goals" content={<p>{text4}</p>} />
       </div>
     </div>
   );

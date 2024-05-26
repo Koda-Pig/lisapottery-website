@@ -143,7 +143,6 @@ export default function Home() {
               for everything...
             </p>
             <Expandable
-              title="Read more"
               label="read-more-about"
               content={
                 <p>

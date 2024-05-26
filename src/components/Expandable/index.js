@@ -3,7 +3,7 @@ import { useState, useId } from "react";
 import styles from "./expandable.module.scss";
 import { Icon } from "@/components/Icon";
 
-export const Expandable = ({ title, label, content, icon, centered }) => {
+export const Expandable = ({ label, content, icon, centered }) => {
   const [open, setOpen] = useState(false);
   const id = `${label}-${useId()}`;
 
@@ -18,7 +18,7 @@ export const Expandable = ({ title, label, content, icon, centered }) => {
         aria-controls={id}
         aria-expanded={open}
       >
-        {title}
+        {open ? "Read less" : "Read more"}
         {icon && <Icon iconName={"chevron-down"} />}
       </button>
       <section
