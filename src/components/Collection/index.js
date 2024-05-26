@@ -28,6 +28,8 @@ export const Collection = ({ props }) => {
             new Promise((resolve) => {
               const img = new window.Image();
               img.src = image.src;
+              img.width = 760;
+              img.height = 760;
               img.onload = resolve;
             })
         )
