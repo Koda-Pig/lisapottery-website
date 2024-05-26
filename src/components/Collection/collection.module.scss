@@ -66,8 +66,6 @@
     transition-property: opacity;
     display: grid;
     grid-template: 1fr / repeat(var(--grid-items), 100%);
-    background-color: #fff5;
-    backdrop-filter: blur(5px);
 
     &.slide_transition_enabled {
       transition-property: transform, opacity;
@@ -155,8 +153,11 @@
       pointer-events: all;
 
       .loader_wrapper {
-        background-color: #fff5;
+        background-color: #fff0;
+        height: 100%;
         backdrop-filter: blur(5px);
+        position: absolute;
+        z-index: -1;
       }
     }
 

@@ -9,23 +9,16 @@ export const Collection = ({ props }) => {
   const [selected, setSelected] = useState(null);
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [fullWidthLoading, setFullWidthLoading] = useState(false);
 
   useEffect(() => {
     if (selected !== null) {
       setGalleryOpen(true);
-      setFullWidthLoading(true);
-      const img = new window.Image();
-      img.src = images[selected].src;
-      img.onload = () => setFullWidthLoading(false);
     }
-  }, [selected, images]);
+  }, [selected]);
 
   useEffect(() => {
     const handleLoading = () => {
-      // setTimeout(() => {
       setLoading(false);
-      // }, 5000);
     };
     if (images.length > 0) {
       setLoading(true);
@@ -36,8 +29,6 @@ export const Collection = ({ props }) => {
               const img = new window.Image();
               img.src = image.src;
               img.onload = resolve;
-              img.width = 760;
-              img.height = 760;
             })
         )
       ).then(handleLoading);
@@ -129,27 +120,24 @@ export const Collection = ({ props }) => {
               }`}
               style={{ transform: `translateX(-${selected * 100}%)` }}
             >
-              {fullWidthLoading ? (
-                <div className={styles.loader_wrapper} aria-hidden={true}>
-                  <div className={styles.loader}></div>
-                </div>
-              ) : (
-                images.map((image, i) => (
-                  <div
-                    className={`${styles.static_image} ${
-                      i === selected ? styles.selected : ""
-                    }`}
-                    key={image.id}
-                  >
-                    <Image
-                      src={image.src}
-                      alt="Yellow vase"
-                      width={760}
-                      height={760}
-                    />
+              {images.map((image, i) => (
+                <div
+                  className={`${styles.static_image} ${
+                    i === selected ? styles.selected : ""
+                  }`}
+                  key={image.id}
+                >
+                  <div className={styles.loader_wrapper} aria-hidden={true}>
+                    <div className={styles.loader}></div>
                   </div>
-                ))
-              )}
+                  <Image
+                    src={image.src}
+                    alt="Yellow vase"
+                    width={760}
+                    height={760}
+                  />
+                </div>
+              ))}
             </div>
           )}
         </>

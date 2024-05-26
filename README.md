@@ -35,3 +35,4 @@ https://www.figma.com/design/qtT9y2OQcYQSf35XBu1NpP/Lisa-Website?node-id=197-87&
 - [] convert to typescript
 - [x] change read more to read less when open
 - [x] footer alignment and max width same as header
+- [ ] ensure loader behind static images
