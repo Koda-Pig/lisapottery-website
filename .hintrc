@@ -11,7 +11,12 @@
           "mask-repeat",
           "mask-image",
           "mask-position",
-          "backdrop-filter"
+          "backdrop-filter",
+          "scrollbar-gutter",
+          "scrollbar-gutter",
+          "scrollbar-width",
+          "scrollbar-width",
+          "scrollbar-width"
         ]
       }
     ]

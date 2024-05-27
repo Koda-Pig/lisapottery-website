@@ -37,3 +37,4 @@ https://www.figma.com/design/qtT9y2OQcYQSf35XBu1NpP/Lisa-Website?node-id=197-87&
 - [x] footer alignment and max width same as header
 - [x] ensure loader behind static images
 - [ ] clean up and refactor
+- [ ] disable gallery prev / next buttons when at start / end
