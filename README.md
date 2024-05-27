@@ -28,13 +28,14 @@ https://www.figma.com/design/qtT9y2OQcYQSf35XBu1NpP/Lisa-Website?node-id=197-87&
 - [x] add slide in animations to sections
 - [x] adjust header behavior on scroll down
 - [x] optimise scroll event listeners
-- [] upload real content
-- [] properly size and configure <Image>'s
+- [ ] upload real content
+- [ ] properly size and configure <Image>'s
 - [x] implement loader in gallery
-- [] smooth gallery animation when switching from last to first image
-- [] convert to typescript
+- [x] smooth gallery animation when switching from last to first image - currently jumps
+  - [ ] Fix by disabling prev/ next buttons at start/ end
+- [ ] convert to typescript
 - [x] change read more to read less when open
 - [x] footer alignment and max width same as header
 - [x] ensure loader behind static images
 - [ ] clean up and refactor
-- [ ] disable gallery prev / next buttons when at start / end
+- [x] disable gallery prev / next buttons when at start / end

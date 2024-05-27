@@ -94,6 +94,11 @@
       }
     }
 
+    &:disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     i {
       transition: 0.2s background-color ease;
       background-color: white;
@@ -161,7 +166,7 @@
       }
     }
 
-    .button {
+    .button:not(:disabled) {
       opacity: 1;
       pointer-events: all;
     }

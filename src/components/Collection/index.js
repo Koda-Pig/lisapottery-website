@@ -56,6 +56,8 @@ export const Collection = ({ props }) => {
     setGalleryOpen(false);
   };
 
+  console.log(selected);
+
   return (
     <div
       className={`${styles.collection} ${
@@ -82,6 +84,7 @@ export const Collection = ({ props }) => {
             title="previous"
             className={`${styles.button} ${styles.button_centered} ${styles.button_previous}`}
             onClick={handlePrevious}
+            disabled={selected === 0}
           >
             <Icon iconName="arrow-left" />
           </button>
@@ -90,6 +93,7 @@ export const Collection = ({ props }) => {
             title="next"
             className={`${styles.button} ${styles.button_centered} ${styles.button_next}`}
             onClick={handleNext}
+            disabled={selected === images.length - 1}
           >
             <Icon iconName="arrow-right" />
           </button>
