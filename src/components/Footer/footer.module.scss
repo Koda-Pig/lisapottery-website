@@ -33,12 +33,6 @@
       }
     }
 
-    @media screen and (min-width: bp.$md) {
-      > *:first-child {
-        margin-left: 66px; // account for empty space in header logo
-      }
-    }
-
     .logo {
       &::before {
         content: "";
