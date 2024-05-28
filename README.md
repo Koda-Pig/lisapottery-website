@@ -45,3 +45,4 @@ https://www.figma.com/design/qtT9y2OQcYQSf35XBu1NpP/Lisa-Website?node-id=197-87&
 - [x] fix scroll margin top for mobile (header-height var)
 - [x] change font size of h1 smaller:
 - [x] increase height of hero image
+- [x] fix logo alignment on mobile

@@ -49,6 +49,14 @@
 
   // mobile
   @media screen and (max-width: calc(bp.$lg + 1px)) {
+    .logo {
+      svg {
+        path {
+          --path-translate: -145;
+        }
+      }
+    }
+
     .menu {
       position: fixed;
       inset: 0;
