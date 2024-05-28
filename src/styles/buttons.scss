@@ -1,0 +1,27 @@
+.outlined {
+  padding: var(--spacer-xs);
+  outline: 1px solid var(--color-gold-lustre);
+}
+
+.button {
+  border-radius: 8px;
+  text-transform: uppercase;
+  color: var(--color-gold-lustre);
+  height: 48px;
+  min-width: 160px;
+  width: max-content;
+  max-width: 100%;
+  display: grid;
+  place-items: center;
+  font-family: var(--secondary-font);
+  letter-spacing: 0.2em;
+  border: 2px solid;
+  transition-property: color, background-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    color: white;
+    background-color: var(--color-gold-lustre);
+  }
+}

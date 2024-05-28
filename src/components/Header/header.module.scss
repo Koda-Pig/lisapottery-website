@@ -1,5 +1,6 @@
 @use "../../styles/layout" as layout;
 @use "../../styles/breakpoints" as bp;
+@use "../../styles/buttons" as buttons;
 
 %logo-styles {
   max-width: 100%;
@@ -31,16 +32,18 @@
     &_inner {
       list-style: none;
       display: flex;
+      align-items: center;
     }
 
     li {
       padding: var(--spacer-xs);
       font-size: 1.2rem;
+      font-family: var(--secondary-font);
     }
 
     .cta {
-      font-weight: 500;
-      color: var(--color-turquoise);
+      @extend .button;
+      line-height: 2.5em;
     }
   }
 

@@ -1,6 +1,7 @@
 @use "../styles/breakpoints" as bp;
 @use "../styles/layout" as layout;
 @use "../styles/utility" as utility;
+@use "../styles/buttons" as buttons;
 
 .main {
   @extend .wrapper;
@@ -16,7 +17,11 @@
 
     &:not(:last-child) {
       margin-bottom: var(--spacer-xl);
-      scroll-margin-top: calc(var(--header-height) + var(--spacer-s));
+      scroll-margin-top: var(--spacer-s);
+
+      @media screen and (min-width: bp.$md) {
+        scroll-margin-top: calc(var(--header-height) + var(--spacer-s));
+      }
     }
 
     &.show {
@@ -53,29 +58,9 @@
   margin-bottom: var(--spacer-l);
 
   &_button {
+    @extend .button;
     margin-inline: auto;
-    border-radius: 10vw;
-    text-transform: uppercase;
-    color: var(--color-gold-lustre);
-    height: 48px;
-    min-width: 160px;
-    width: max-content;
-    max-width: 100%;
-    display: grid;
-    place-items: center;
-    transition: 0.2s box-shadow ease;
-    font-family: var(--secondary-font);
-    letter-spacing: 0.2em;
     line-height: 3em;
-    border: 2px solid;
-    transition-property: color, border-color, background-color;
-    transition-duration: 0.15s;
-    transition-timing-function: ease-out;
-
-    &:hover {
-      color: white;
-      background-color: var(--color-gold-lustre);
-    }
   }
 }
 
@@ -169,11 +154,11 @@
     }
 
     i {
-      background-color: var(--color-turquoise);
+      background-color: var(--color-cobit);
       width: 30px;
       height: 30px;
       padding: var(--spacer-xxs);
-      transition: 0.3s transform ease;
+      transition: 0.3s background-color ease;
     }
   }
 }

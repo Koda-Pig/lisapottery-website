@@ -5,6 +5,11 @@
   display: grid;
   grid-template: repeat(5, max-content) / 1fr 1fr;
 
+  h1 {
+    font-size: 1.3rem;
+    font-weight: normal;
+  }
+
   div:has(> img) {
     line-height: 0;
   }
@@ -71,7 +76,7 @@
 .featured_image {
   img {
     @extend .outlined;
-    aspect-ratio: 1024 / 479;
+    aspect-ratio: 1024 / 700;
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -80,6 +85,7 @@
     @media screen and (min-width: bp.$md) {
       padding: 0;
       outline: none;
+      aspect-ratio: 1024 / 479;
     }
   }
 }
