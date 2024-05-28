@@ -6,13 +6,17 @@
 
   &_inner {
     @extend .wrapper;
-    max-width: bp.$xxl;
+    max-width: bp.$xxxl;
     display: flex;
     position: relative;
     justify-content: space-between;
     align-items: flex-end;
     padding-block: var(--spacer-xl) var(--spacer-s);
     gap: var(--spacer-m);
+
+    @media screen and (min-width: bp.$xl) {
+      padding-inline: var(--spacer-xxxl);
+    }
 
     .backToTop {
       display: grid;

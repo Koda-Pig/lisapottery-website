@@ -14,7 +14,7 @@
 
   &_inner {
     @extend .wrapper;
-    max-width: bp.$xxl;
+    max-width: bp.$xxxl;
     display: flex;
     justify-content: space-between;
     padding-top: var(--spacer-xl);
@@ -24,7 +24,6 @@
     svg {
       @extend %logo-styles;
       max-height: var(--header-height);
-      transition: max-height var(--desktop-transition);
     }
   }
 
@@ -39,6 +38,10 @@
       padding: var(--spacer-xs);
       font-size: 1.2rem;
       font-family: var(--secondary-font);
+
+      &:last-child {
+        padding-right: 0;
+      }
     }
 
     .cta {
@@ -48,15 +51,7 @@
   }
 
   // mobile
-  @media screen and (max-width: calc(bp.$lg + 1px)) {
-    .logo {
-      svg {
-        path {
-          --path-translate: -145;
-        }
-      }
-    }
-
+  @media screen and (max-width: calc(bp.$xl + 1px)) {
     .menu {
       position: fixed;
       inset: 0;
@@ -154,7 +149,7 @@
   }
 
   // desktop
-  @media screen and (min-width: bp.$lg) {
+  @media screen and (min-width: bp.$xl) {
     background-color: white;
     z-index: 1;
     position: fixed;
@@ -165,26 +160,11 @@
 
     &.shiftToTop {
       top: -30px;
-
-      .logo {
-        img {
-          max-width: 350px;
-        }
-      }
-
-      .menu_inner {
-        transform: translateY(68%);
-      }
     }
 
     &_inner {
       margin-bottom: var(--spacer-xxs);
-    }
-
-    .logo {
-      img {
-        transition: max-width var(--desktop-transition);
-      }
+      padding-inline: var(--spacer-xxxl);
     }
 
     .menu_inner {
@@ -207,9 +187,10 @@
   margin-block: 0;
   padding-bottom: var(--spacer-l);
 
-  @media screen and (min-width: bp.$lg) {
-    max-width: bp.$xxl;
+  @media screen and (min-width: bp.$xl) {
+    max-width: bp.$xxxl;
     margin-top: var(--header-height);
+    padding-inline: var(--spacer-xxxl);
 
     svg {
       opacity: var(--scroll-y, 1);

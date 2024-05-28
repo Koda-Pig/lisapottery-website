@@ -36,7 +36,7 @@ export const Header = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) setIsMobile(true);
+      if (window.innerWidth < 1200) setIsMobile(true);
       else setIsMobile(false);
     };
 
