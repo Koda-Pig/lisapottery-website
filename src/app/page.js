@@ -10,6 +10,7 @@ import { Header, HeaderLogoStatic } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollProvider } from "@/components/ScrollContext";
 
+// For section slide-up animation
 const useIntersectionObserver = (elements, callback) => {
   useEffect(() => {
     const observer = new IntersectionObserver(

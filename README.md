@@ -28,16 +28,12 @@ https://www.figma.com/design/qtT9y2OQcYQSf35XBu1NpP/Lisa-Website?node-id=197-87&
 - [x] add slide in animations to sections
 - [x] adjust header behavior on scroll down
 - [x] optimise scroll event listeners
-- [ ] upload real content
-- [ ] properly size and configure <Image>'s
 - [x] implement loader in gallery
 - [x] smooth gallery animation when switching from last to first image - currently jumps
-  - [x] Fix by disabling prev/ next buttons at start/ end
-- [ ] convert to typescript
+  - Fix by disabling prev/ next buttons at start/ end
 - [x] change read more to read less when open
 - [x] footer alignment and max width same as header
 - [x] ensure loader behind static images
-- [ ] clean up and refactor
 - [x] disable gallery prev / next buttons when at start / end
 - [x] check desktop logo, alignment is different. Fixing this should resolve the perceived misaligned footer issue
 - [x] change accent color to the gold, no turquoise
@@ -46,3 +42,7 @@ https://www.figma.com/design/qtT9y2OQcYQSf35XBu1NpP/Lisa-Website?node-id=197-87&
 - [x] change font size of h1 smaller:
 - [x] increase height of hero image
 - [x] fix logo alignment on mobile
+- [ ] clean up and refactor
+- [ ] upload real content
+- [ ] properly size and configure <Image>'s
+- [ ] convert to typescript

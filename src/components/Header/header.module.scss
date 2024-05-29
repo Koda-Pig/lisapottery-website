@@ -3,7 +3,6 @@
 @use "../../styles/buttons" as buttons;
 
 %logo-styles {
-  max-width: 100%;
   height: auto;
   max-height: 100%;
   max-width: 60vw;
@@ -13,8 +12,7 @@
   --desktop-transition: ease-out 0.3s;
 
   &_inner {
-    @extend .wrapper;
-    max-width: bp.$xxxl;
+    @extend .wrapper_wide;
     display: flex;
     justify-content: space-between;
     padding-top: var(--spacer-xl);
@@ -183,12 +181,11 @@
 }
 
 .static_logo {
-  @extend .wrapper;
+  @extend .wrapper_wide;
   margin-block: 0;
   padding-bottom: var(--spacer-l);
 
   @media screen and (min-width: bp.$xl) {
-    max-width: bp.$xxxl;
     margin-top: var(--header-height);
     padding-inline: var(--spacer-xxxl);
 
