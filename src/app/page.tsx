@@ -207,6 +207,7 @@ export default function Home(): JSX.Element {
                 <a
                   href="https://www.instagram.com/lisa.lieb.metaphysical.potter/"
                   title="Lisa Liebermann's Instagram page"
+                  target="_blank"
                 >
                   <Icon iconName={"instagram"} />
                   <p>Instagram</p>
@@ -216,6 +217,7 @@ export default function Home(): JSX.Element {
                 <a
                   href="mailto:lisa.lieb.tile@gmail.com"
                   title="Lisa Liebermann's email"
+                  target="_blank"
                 >
                   <Icon iconName={"email"} />
                   <p>lisa.lieb.tile@gmail.com</p>
@@ -225,6 +227,7 @@ export default function Home(): JSX.Element {
                 <a
                   href="https://www.youtube.com/@potcast..."
                   title="Lisa Liebermann's Potcast Youtube page"
+                  target="_blank"
                 >
                   <Icon iconName={"youtube"} />
                   <p>Youtube</p>
