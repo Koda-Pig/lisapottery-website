@@ -103,14 +103,14 @@ export default function Home(): JSX.Element {
                 images: {
                   small: [
                     { id: 1, src: "/images/gallery/small/vase1.webp" },
-                    { id: 2, src: "/images/gallery/small/vase2.webp" },
-                    { id: 3, src: "/images/gallery/small/vase3.webp" },
+                    { id: 8, src: "/images/gallery/small/vase8.webp" },
+                    { id: 9, src: "/images/gallery/small/vase9.webp" },
                     { id: 4, src: "/images/gallery/small/vase4.webp" },
                     { id: 5, src: "/images/gallery/small/vase5.webp" },
                     { id: 6, src: "/images/gallery/small/vase6.webp" },
                     { id: 7, src: "/images/gallery/small/vase7.webp" },
-                    { id: 8, src: "/images/gallery/small/vase8.webp" },
-                    { id: 9, src: "/images/gallery/small/vase9.webp" }
+                    { id: 2, src: "/images/gallery/small/vase2.webp" },
+                    { id: 3, src: "/images/gallery/small/vase3.webp" }
                   ],
                   large: [
                     {
@@ -120,12 +120,12 @@ export default function Home(): JSX.Element {
                     },
                     {
                       id: 2,
-                      src: "/images/gallery/large/vase2.webp",
+                      src: "/images/gallery/large/vase8.webp",
                       width: 532
                     },
                     {
                       id: 3,
-                      src: "/images/gallery/large/vase3.webp",
+                      src: "/images/gallery/large/vase9.webp",
                       width: 502
                     },
                     {
@@ -150,12 +150,12 @@ export default function Home(): JSX.Element {
                     },
                     {
                       id: 8,
-                      src: "/images/gallery/large/vase8.webp",
+                      src: "/images/gallery/large/vase2.webp",
                       width: 450
                     },
                     {
                       id: 9,
-                      src: "/images/gallery/large/vase9.webp",
+                      src: "/images/gallery/large/vase3.webp",
                       width: 515
                     }
                   ]
