@@ -53,7 +53,7 @@ export const Introduction: FC<IntroductionProps> = ({
           label="read-more-introduction"
           content={
             <p>
-              {text3} {text2}
+              {text2} {text3}
             </p>
           }
         />

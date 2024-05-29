@@ -2,15 +2,19 @@
 import Image from "next/image";
 import styles from "./collection.module.scss";
 import { useState, useEffect } from "react";
-import { Icon } from "../Icon";
+import { Icon } from "@/components/Icon";
 
 interface ImageProps {
   id: number;
   src: string;
+  width?: number;
 }
 
 interface CollectionProps {
-  images: ImageProps[];
+  images: {
+    small: ImageProps[];
+    large: ImageProps[];
+  };
 }
 
 interface CollectionComponentProps {
@@ -33,10 +37,10 @@ export const Collection = ({
 
   useEffect(() => {
     const handleLoading = () => setLoading(false);
-    if (images.length > 0) {
+    if (images.small.length > 0) {
       setLoading(true);
       Promise.all(
-        images.map(
+        images.small.map(
           (image) =>
             new Promise<void>((resolve) => {
               const img = new window.Image();
@@ -53,14 +57,14 @@ export const Collection = ({
   const handlePrevious = () => {
     if (selected === null) return;
     setSelected((prevSelected) =>
-      prevSelected === 0 ? images.length - 1 : prevSelected! - 1
+      prevSelected === 0 ? images.small.length - 1 : prevSelected! - 1
     );
   };
 
   const handleNext = () => {
     if (selected === null) return;
     setSelected((prevSelected) =>
-      prevSelected === images.length - 1 ? 0 : prevSelected! + 1
+      prevSelected === images.small.length - 1 ? 0 : prevSelected! + 1
     );
   };
 
@@ -104,14 +108,14 @@ export const Collection = ({
             title="next"
             className={`${styles.button} ${styles.button_centered} ${styles.button_next}`}
             onClick={handleNext}
-            disabled={selected === images.length - 1}
+            disabled={selected === images.small.length - 1}
           >
             <Icon iconName="arrow-right" />
           </button>
 
           {/* grid images */}
           <div className={styles.grid}>
-            {images.map((image, i) => (
+            {images.small.map((image, i) => (
               <div
                 className={`${styles.image_wrapper} ${
                   selected === i ? styles.selected : ""
@@ -137,7 +141,7 @@ export const Collection = ({
               }`}
               style={{ transform: `translateX(-${selected! * 100}%)` }}
             >
-              {images.map((image, i) => (
+              {images.large.map((image, i) => (
                 <div
                   className={`${styles.static_image} ${
                     i === selected ? styles.selected : ""
@@ -150,8 +154,8 @@ export const Collection = ({
                   <Image
                     src={image.src}
                     alt="Yellow vase"
-                    width={760}
-                    height={760}
+                    width={image.width}
+                    height={768}
                   />
                 </div>
               ))}

@@ -87,7 +87,7 @@ export default function Home(): JSX.Element {
               text1="The quality of the vessel tells a story that is never all seen from one perspective. There is always something around the corner, some element of "
               text2="surprise hidden in the design. The experience of it is immersive. You can turn it around, look inside, fill it up and empty it again. A vessel expresses time in a different way to our usual linear calendars. It turns around like our earth and we are reminded of the cyclical nature of seasons and of time. "
               text3="It is my aim to capture specific moments in time by drawing on the archetypal myths that accompany various changes in the sky. My art"
-              text4="is all related to personal responses and traditional astrological meanings for fleeting moments in time."
+              text4=" is all related to personal responses and traditional astrological meanings for fleeting moments in time."
             />
           </section>
 
@@ -100,17 +100,66 @@ export default function Home(): JSX.Element {
             <h2>Collection</h2>
             <Collection
               props={{
-                images: [
-                  { id: 1, src: "/images/gallery/vase-1.webp" },
-                  { id: 2, src: "/images/gallery/vase-2.webp" },
-                  { id: 3, src: "/images/gallery/vase-3.webp" },
-                  { id: 4, src: "/images/gallery/vase-4.webp" },
-                  { id: 5, src: "/images/gallery/vase-5.webp" },
-                  { id: 6, src: "/images/gallery/vase-6.webp" },
-                  { id: 7, src: "/images/gallery/vase-7.webp" },
-                  { id: 8, src: "/images/gallery/vase-8.webp" },
-                  { id: 9, src: "/images/gallery/vase-9.webp" }
-                ]
+                images: {
+                  small: [
+                    { id: 1, src: "/images/gallery/small/vase1.webp" },
+                    { id: 2, src: "/images/gallery/small/vase2.webp" },
+                    { id: 3, src: "/images/gallery/small/vase3.webp" },
+                    { id: 4, src: "/images/gallery/small/vase4.webp" },
+                    { id: 5, src: "/images/gallery/small/vase5.webp" },
+                    { id: 6, src: "/images/gallery/small/vase6.webp" },
+                    { id: 7, src: "/images/gallery/small/vase7.webp" },
+                    { id: 8, src: "/images/gallery/small/vase8.webp" },
+                    { id: 9, src: "/images/gallery/small/vase9.webp" }
+                  ],
+                  large: [
+                    {
+                      id: 1,
+                      src: "/images/gallery/large/vase1.webp",
+                      width: 576
+                    },
+                    {
+                      id: 2,
+                      src: "/images/gallery/large/vase2.webp",
+                      width: 532
+                    },
+                    {
+                      id: 3,
+                      src: "/images/gallery/large/vase3.webp",
+                      width: 502
+                    },
+                    {
+                      id: 4,
+                      src: "/images/gallery/large/vase4.webp",
+                      width: 576
+                    },
+                    {
+                      id: 5,
+                      src: "/images/gallery/large/vase5.webp",
+                      width: 576
+                    },
+                    {
+                      id: 6,
+                      src: "/images/gallery/large/vase6.webp",
+                      width: 515
+                    },
+                    {
+                      id: 7,
+                      src: "/images/gallery/large/vase7.webp",
+                      width: 346
+                    },
+                    {
+                      id: 8,
+                      src: "/images/gallery/large/vase8.webp",
+                      width: 450
+                    },
+                    {
+                      id: 9,
+                      src: "/images/gallery/large/vase9.webp",
+                      width: 515
+                    }
+                  ]
+                }
               }}
             />
           </section>
@@ -149,21 +198,27 @@ export default function Home(): JSX.Element {
             <Expandable
               label="read-more-about"
               content={
-                <p>
-                  I have achieved in life. Everything begins with a pencil Clay
-                  is second nature to me. I have devoted myself wholeheartedly
-                  to its service. The work of a Potter is very close to my heart
-                  and I have drawn numerous parallels between humans and pots.
-                  Both are vessels, are made from a point of center, fashioned
-                  from the inside out, endure vulnerability when opening up and
-                  finally, must go through the fire to be transformed Clay is
-                  second nature to me. I have devoted myself wholeheartedly to
-                  its service. The work of a Potter is very close to my heart
-                  and I have drawn numerous parallels between humans and pots.
-                  Both are vessels, are made from a point of center, fashioned
-                  from the inside out, endure vulnerability when opening up and
-                  finally, must go through the fire to be transformed.
-                </p>
+                <div>
+                  <p>
+                    I have achieved in life. Everything begins with a pencil
+                    Clay is second nature to me. I have devoted myself
+                    wholeheartedly to its service. The work of a Potter is very
+                    close to my heart and I have drawn numerous parallels
+                    between humans and pots. Both are vessels, are made from a
+                    point of center, fashioned from the inside out, endure
+                    vulnerability when opening up and finally, must go through
+                    the fire to be transformed.
+                  </p>
+                  <p>
+                    Clay is second nature to me. I have devoted myself
+                    wholeheartedly to its service. The work of a Potter is very
+                    close to my heart and I have drawn numerous parallels
+                    between humans and pots. Both are vessels, are made from a
+                    point of center, fashioned from the inside out, endure
+                    vulnerability when opening up and finally, must go through
+                    the fire to be transformed.
+                  </p>
+                </div>
               }
             />
 
