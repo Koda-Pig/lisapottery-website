@@ -20,7 +20,8 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "sass": "^1.70.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "ts-node": "^9.0.0"
   },
   "engines": {
     "node": ">=18.17"
