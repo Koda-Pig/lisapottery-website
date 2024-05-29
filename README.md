@@ -42,7 +42,7 @@ https://www.figma.com/design/qtT9y2OQcYQSf35XBu1NpP/Lisa-Website?node-id=197-87&
 - [x] change font size of h1 smaller:
 - [x] increase height of hero image
 - [x] fix logo alignment on mobile
+- [x] convert to typescript
 - [ ] clean up and refactor
 - [ ] upload real content
 - [ ] properly size and configure <Image>'s
-- [ ] convert to typescript

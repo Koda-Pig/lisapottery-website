@@ -1,8 +1,27 @@
 import styles from "./introduction.module.scss";
 import { Expandable } from "@/components/Expandable";
 import Image from "next/image";
+import { FC } from "react";
 
-export const Introduction = ({
+interface ImageProps {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+interface IntroductionProps {
+  title: string;
+  image1: ImageProps;
+  image2: ImageProps;
+  image3: ImageProps;
+  text1: string;
+  text2: string;
+  text3: string;
+  text4: string;
+}
+
+export const Introduction: FC<IntroductionProps> = ({
   title,
   image1,
   image2,

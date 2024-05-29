@@ -1,9 +1,21 @@
 "use client";
-import { useState, useId } from "react";
+import { useState, useId, ReactNode } from "react";
 import styles from "./expandable.module.scss";
 import { Icon } from "@/components/Icon";
 
-export const Expandable = ({ label, content, icon, centered }) => {
+interface ExpandableProps {
+  label: string;
+  content: ReactNode;
+  icon?: boolean;
+  centered?: boolean;
+}
+
+export const Expandable = ({
+  label,
+  content,
+  icon = false,
+  centered = false
+}: ExpandableProps) => {
   const [open, setOpen] = useState(false);
   const id = `${label}-${useId()}`;
 

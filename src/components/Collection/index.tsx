@@ -4,11 +4,26 @@ import styles from "./collection.module.scss";
 import { useState, useEffect } from "react";
 import { Icon } from "../Icon";
 
-export const Collection = ({ props }) => {
+interface ImageProps {
+  id: string;
+  src: string;
+}
+
+interface CollectionProps {
+  images: ImageProps[];
+}
+
+interface CollectionComponentProps {
+  props: CollectionProps;
+}
+
+export const Collection = ({
+  props
+}: CollectionComponentProps): JSX.Element => {
   const images = props.images;
-  const [selected, setSelected] = useState(null);
-  const [galleryOpen, setGalleryOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [selected, setSelected] = useState<number | null>(null);
+  const [galleryOpen, setGalleryOpen] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     if (selected !== null) {
@@ -17,20 +32,18 @@ export const Collection = ({ props }) => {
   }, [selected]);
 
   useEffect(() => {
-    const handleLoading = () => {
-      setLoading(false);
-    };
+    const handleLoading = () => setLoading(false);
     if (images.length > 0) {
       setLoading(true);
       Promise.all(
         images.map(
           (image) =>
-            new Promise((resolve) => {
+            new Promise<void>((resolve) => {
               const img = new window.Image();
               img.src = image.src;
               img.width = 760;
               img.height = 760;
-              img.onload = resolve;
+              img.onload = () => resolve();
             })
         )
       ).then(handleLoading);
@@ -40,14 +53,14 @@ export const Collection = ({ props }) => {
   const handlePrevious = () => {
     if (selected === null) return;
     setSelected((prevSelected) =>
-      prevSelected === 0 ? images.length - 1 : prevSelected - 1
+      prevSelected === 0 ? images.length - 1 : prevSelected! - 1
     );
   };
 
   const handleNext = () => {
     if (selected === null) return;
     setSelected((prevSelected) =>
-      prevSelected === images.length - 1 ? 0 : prevSelected + 1
+      prevSelected === images.length - 1 ? 0 : prevSelected! + 1
     );
   };
 
@@ -55,8 +68,6 @@ export const Collection = ({ props }) => {
     setSelected(null);
     setGalleryOpen(false);
   };
-
-  console.log(selected);
 
   return (
     <div
@@ -124,7 +135,7 @@ export const Collection = ({ props }) => {
               className={`${styles.fullscreen_gallery} ${
                 galleryOpen ? styles.slide_transition_enabled : ""
               }`}
-              style={{ transform: `translateX(-${selected * 100}%)` }}
+              style={{ transform: `translateX(-${selected! * 100}%)` }}
             >
               {images.map((image, i) => (
                 <div

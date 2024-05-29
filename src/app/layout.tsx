@@ -5,7 +5,11 @@ export const metadata = {
   description: "Lisa Liebermann's portfolio."
 };
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" id="top">
       <body>{children}</body>

@@ -1,10 +1,9 @@
 "use client";
 import styles from "./header.module.scss";
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState, useEffect, CSSProperties } from "react";
 import { useScroll } from "@/components/ScrollContext";
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const [shiftToTop, setShiftToTop] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
@@ -16,29 +15,22 @@ export const Header = () => {
     if (hamburgerOpen) doc.classList.add("freeze");
     else doc.classList.remove("freeze");
 
-    window.addEventListener("resize", () => setHamburgerOpen(false));
+    const handleResize = () => setHamburgerOpen(false);
+
+    window.addEventListener("resize", handleResize);
 
     return () => {
       doc.classList.remove("freeze");
+      window.removeEventListener("resize", handleResize);
     };
   }, [hamburgerOpen]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShiftToTop(0 - scrollY);
-      if (scrollY > 200) setShiftToTop(true);
-      else setShiftToTop(false);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
+    setShiftToTop(scrollY > 0);
+  }, [scrollY]);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1200) setIsMobile(true);
-      else setIsMobile(false);
-    };
+    const handleResize = () => setIsMobile(window.innerWidth < 1200);
 
     handleResize();
 
@@ -73,7 +65,6 @@ export const Header = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 417.0811 109.842"
-            alt="Lisa Liebermann logo upper"
             width={510}
             height={95}
           >
@@ -173,7 +164,7 @@ export const HeaderLogoStatic = () => {
         viewBox="0 0 468.1108 141.5918"
         width={510}
         height={172}
-        style={{ "--scroll-y": `${logoOpacity}` }}
+        style={{ "--scroll-y": `${logoOpacity}` } as CSSProperties}
       >
         <g className="gold">
           <path

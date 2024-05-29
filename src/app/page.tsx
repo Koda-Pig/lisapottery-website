@@ -1,7 +1,7 @@
 "use client";
 import styles from "./page.module.scss";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, MutableRefObject } from "react";
 import { Introduction } from "@/components/Introduction";
 import { Expandable } from "@/components/Expandable";
 import { Icon } from "@/components/Icon";
@@ -11,13 +11,16 @@ import { Footer } from "@/components/Footer";
 import { ScrollProvider } from "@/components/ScrollContext";
 
 // For section slide-up animation
-const useIntersectionObserver = (elements, callback) => {
+const useIntersectionObserver = (
+  elements: MutableRefObject<HTMLElement | null>[],
+  callback: (target: HTMLElement) => void
+) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            callback(entry.target);
+            callback(entry.target as HTMLElement);
           }
         });
       },
@@ -40,12 +43,12 @@ const useIntersectionObserver = (elements, callback) => {
   }, [elements, callback]);
 };
 
-export default function Home() {
-  const collectionRef = useRef(null);
-  const ctaRef = useRef(null);
-  const videoRef = useRef(null);
-  const aboutRef = useRef(null);
-  const contactRef = useRef(null);
+export default function Home(): JSX.Element {
+  const collectionRef = useRef<HTMLDivElement | null>(null);
+  const ctaRef = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLDivElement | null>(null);
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = useRef<HTMLDivElement | null>(null);
 
   const refs = [collectionRef, ctaRef, videoRef, aboutRef, contactRef];
 

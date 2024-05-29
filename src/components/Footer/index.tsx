@@ -2,7 +2,7 @@ import styles from "./footer.module.scss";
 import Image from "next/image";
 import { Icon } from "@/components/Icon";
 
-export const Footer = () => {
+export const Footer = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
 
   return (
