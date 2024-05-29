@@ -43,9 +43,8 @@ https://www.figma.com/design/qtT9y2OQcYQSf35XBu1NpP/Lisa-Website?node-id=197-87&
 - [x] increase height of hero image
 - [x] fix logo alignment on mobile
 - [x] convert to typescript
+- [x] fix order of intro text
+- [x] in collection, have fullwidth version of the image not be covered, rather contained
 - [ ] clean up and refactor
 - [ ] upload real content
 - [ ] properly size and configure <Image>'s
-- [ ] fix order of intro text
-- [ ] make sure cat is shown in that one vase gallery image
-- [ ] in collection, have fullwidth version of the image not be covered, rather contained

@@ -74,6 +74,7 @@
 
 // block 1
 .featured_image {
+  height: 200%;
   img {
     @extend .outlined;
     aspect-ratio: 1024 / 700;
@@ -109,6 +110,10 @@
   overflow: hidden;
   align-items: center;
 
+  .image_second {
+    object-position: 16%;
+  }
+
   @media screen and (min-width: bp.$md) {
     gap: var(--spacer-xs);
     grid-template-columns: 1fr 1fr;
@@ -120,11 +125,23 @@
 
   img {
     max-width: 100%;
-    height: 100%;
+    // height: 100%;
     object-fit: cover;
   }
 
   .image_second {
-    height: 200%;
+    // height: 200%;
+  }
+}
+
+.hideOnMobile {
+  @media screen and (max-width: bp.$md) {
+    display: none;
+  }
+}
+
+.hideOnDesktop {
+  @media screen and (min-width: calc( bp.$md + 1px)) {
+    display: none;
   }
 }

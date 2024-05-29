@@ -52,9 +52,13 @@ export const Introduction: FC<IntroductionProps> = ({
         <Expandable
           label="read-more-introduction"
           content={
-            <p>
-              {text2} {text3}
-            </p>
+            <div>
+              <p>{text2}</p>
+
+              <p className={styles.hideOnMobile}>
+                {text3} {text4}
+              </p>
+            </div>
           }
         />
       </div>
@@ -77,7 +81,7 @@ export const Introduction: FC<IntroductionProps> = ({
       </div>
 
       <div
-        className={`${styles.text_section} ${styles.block_5}`}
+        className={`${styles.text_section} ${styles.block_5} `}
         id="text-section"
       >
         <p>{text3.trim()}...</p>

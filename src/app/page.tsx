@@ -67,19 +67,19 @@ export default function Home(): JSX.Element {
             <Introduction
               title="I am a narrative Potter. I choose the vessel to tell my story."
               image1={{
-                src: "/images/gallery/vase-7.webp",
+                src: "/images/featured/featured2.png",
                 alt: "Yellow vase",
                 width: 1024,
                 height: 479
               }}
               image2={{
-                src: "/images/gallery/vase-7.webp",
+                src: "/images/featured-vase.png",
                 alt: "Yellow vase",
                 width: 508,
                 height: 252
               }}
               image3={{
-                src: "/images/gallery/vase-7.webp",
+                src: "/images/featured/featured3.png",
                 alt: "Yellow vase",
                 width: 508,
                 height: 252
