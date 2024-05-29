@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { Icon } from "../Icon";
 
 interface ImageProps {
-  id: string;
+  id: number;
   src: string;
 }
 
