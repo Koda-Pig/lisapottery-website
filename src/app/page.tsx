@@ -200,7 +200,7 @@ export default function Home(): JSX.Element {
               content={
                 <div>
                   <p>
-                    I have achieved in life. Everything begins with a pencil
+                    I have achieved in life. Everything begins with a pencil.
                     Clay is second nature to me. I have devoted myself
                     wholeheartedly to its service. The work of a Potter is very
                     close to my heart and I have drawn numerous parallels

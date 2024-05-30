@@ -141,8 +141,9 @@
     text-align: center;
 
     img {
+      width: auto;
       height: 100%;
-      object-fit: contain;
+      aspect-ratio: auto;
     }
   }
 
