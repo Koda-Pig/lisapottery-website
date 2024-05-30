@@ -49,8 +49,9 @@
 
     &:hover {
       .image_wrapper:not(:hover) {
-        // disabeld until proper fix
-        // filter: blur(1px);
+        img {
+          // transform: scale(0.95);
+        }
       }
     }
   }
@@ -89,7 +90,7 @@
 
     &:hover {
       i {
-        scale: 1.1;
+        transform: scale(1.1);
       }
     }
 
@@ -99,7 +100,7 @@
     }
 
     i {
-      transition: 0.2s scale ease;
+      transition: 0.2s transform ease;
       background-color: var(--color-gold-lustre);
     }
 
@@ -124,15 +125,20 @@
 
   .image_wrapper {
     line-height: 0;
-    transition-property: box-shadow, filter;
-    transition-duration: 0.25s;
-    transition-timing-function: ease;
     cursor: pointer;
+    overflow: hidden;
 
     &:hover {
-      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4);
       z-index: 1;
-      filter: none;
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    img {
+      transition-property: transform;
+      transition-duration: 0.25s;
+      transition-timing-function: ease;
     }
   }
 
@@ -175,11 +181,6 @@
     .button:not(:disabled) {
       opacity: 1;
       pointer-events: all;
-    }
-
-    .image_wrapper {
-      box-shadow: none;
-      filter: none;
     }
   }
 }
