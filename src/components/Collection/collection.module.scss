@@ -47,12 +47,19 @@
     gap: var(--spacer-xxs);
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 
-    &:hover {
-      .image_wrapper:not(:hover) {
-        img {
-          // transform: scale(0.95);
-        }
-      }
+    // &:hover {
+    //   .image_wrapper:not(:hover) {
+    //     img {
+    //       transform: scale(0.95);
+    //     }
+    //   }
+    // }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: cover;
     }
   }
 
@@ -145,19 +152,18 @@
   .static_image {
     line-height: 0;
     text-align: center;
+    position: relative;
 
     img {
       width: auto;
       height: 100%;
       aspect-ratio: auto;
-    }
-  }
 
-  img {
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-    object-fit: cover;
+      // This is a fix for firefox
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &.has_selected {
