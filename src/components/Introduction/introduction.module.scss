@@ -1,0 +1,147 @@
+@use "../../styles/breakpoints" as bp;
+@use "../../styles/utility" as utility;
+
+.introduction {
+  display: grid;
+  grid-template: repeat(5, max-content) / 1fr 1fr;
+
+  h1 {
+    font-size: 1.3rem;
+    font-weight: normal;
+  }
+
+  div:has(> img) {
+    line-height: 0;
+  }
+
+  > div {
+    grid-column: span 2;
+  }
+
+  .block_ {
+    // featured image
+    &1 {
+      order: 1;
+      margin-bottom: var(--spacer-m);
+    }
+    // title
+    &2 {
+      order: 2;
+    }
+    // text section 1
+    &3 {
+      order: 3;
+      margin-bottom: var(--spacer-m);
+    }
+    // image pair
+    &4 {
+      order: 4;
+      margin-bottom: var(--spacer-m);
+    }
+    // text section 2
+    &5 {
+      order: 5;
+    }
+
+    // desktop
+    @media screen and (min-width: bp.$md) {
+      // featured image
+      &1 {
+        margin-bottom: var(--spacer-xs);
+      }
+      // title
+      &2 {
+        grid-column: span 1;
+        h1 {
+          max-width: calc(100% - 80px);
+        }
+      }
+      // text section 1
+      &3 {
+        grid-column: span 1;
+      }
+      // image pair
+      &4 {
+        order: 1;
+      }
+      // text section 2
+      &5 {
+        display: none;
+      }
+    }
+  }
+}
+
+// block 1
+.featured_image {
+  height: 200%;
+  img {
+    @extend .outlined;
+    aspect-ratio: 1024 / 700;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+
+    @media screen and (min-width: bp.$md) {
+      padding: 0;
+      outline: none;
+      aspect-ratio: 1024 / 479;
+    }
+  }
+}
+
+.text_section {
+  h1 {
+    text-transform: uppercase;
+  }
+
+  button {
+    color: var(--color-gold-lustre);
+    text-transform: capitalize;
+  }
+}
+
+.image_pair {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacer-xxs);
+  max-width: 100%;
+  overflow: hidden;
+  align-items: center;
+
+  .image_second {
+    object-position: 16%;
+  }
+
+  @media screen and (min-width: bp.$md) {
+    gap: var(--spacer-xs);
+    grid-template-columns: 1fr 1fr;
+
+    .image_second {
+      order: -1;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    // height: 100%;
+    object-fit: cover;
+  }
+
+  .image_second {
+    // height: 200%;
+  }
+}
+
+.hideOnMobile {
+  @media screen and (max-width: bp.$md) {
+    display: none;
+  }
+}
+
+.hideOnDesktop {
+  @media screen and (min-width: calc( bp.$md + 1px)) {
+    display: none;
+  }
+}

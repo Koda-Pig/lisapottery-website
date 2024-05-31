@@ -1,10 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
+  --max-width: calc(1024px + (24px * 2));
 
-  --eigengrau: #16161a;
+  // Colors
+  --color-eigengrau: #16161a;
+  --color-dark: #3d3d3d;
+  --color-cobit: #22394c;
+  --color-iron-ore: #74330f;
+  --color-gold-lustre: #956c00;
+  --color-gold-lustre-10: #956c001a;
+  --color-turquoise: #4f8691;
+  --color-porcelain: #fafafa;
+
+  // Spacing
+  --spacer-xxs: 4px;
+  --spacer-xs: 8px;
+  --spacer-s: 16px;
+  --spacer-m: 24px;
+  --spacer-l: 32px;
+  --spacer-xl: 40px;
+  --spacer-xxl: 48px;
+  --spacer-xxxl: 56px;
+  --spacer-xxxxl: 72px;
+
+  // Sizing
+  --header-height: 140px;
+
+  // Fonts - body
+  --primary-font: "Cormorant", serif;
+
+  // Fonts - headings
+  --secondary-font: "Spectral SC", serif;
 }
 
 * {
@@ -13,9 +40,17 @@
   margin: 0;
 }
 
+html,
 body {
-  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+
+body {
+  font-family: var(--primary-font);
   font-size: 16px;
+  color: var(--color-cobit);
 }
 
 h1,
@@ -24,34 +59,61 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 300;
+  font-weight: 500;
   margin-bottom: 0.5rem;
+  font-family: var(--primary-font);
+  color: var(--color-iron-ore);
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.4rem;
+}
+h3 {
+  font-size: 1.3rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 1.1rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: var(--spacer-xs);
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-width: 0 0 1px 0;
+  transition-property: color, border-color;
+  transition-duration: 0.15s;
+  padding-bottom: 0.1em;
+
+  &:hover {
+    border-color: inherit;
+    color: var(--color-gold-lustre);
+  }
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  @extend .link;
 }
 
-.gradient_background {
-  background-size: 200% 200%;
-  animation: gradientFlow 8s ease infinite;
-  background-image: linear-gradient(
-    45deg,
-    #ffffff 0%,
-    #d0e3ff 99%,
-    #e7f1ff 100%
-  );
+button {
+  cursor: pointer;
+  border: none;
 }
 
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+// Prevent scroll when mobile menu open
+.freeze {
+  overflow: hidden;
 }

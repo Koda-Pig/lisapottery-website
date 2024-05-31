@@ -1,0 +1,12 @@
+@use "./breakpoints" as bp;
+
+.wrapper {
+  padding-inline: var(--spacer-m);
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+.wrapper_wide {
+  @extend .wrapper;
+  max-width: bp.$xxxl;
+}

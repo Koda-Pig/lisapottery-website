@@ -1,0 +1,64 @@
+@use "../../styles/layout" as layout;
+@use "../../styles/breakpoints" as bp;
+
+.footer {
+  overflow: hidden;
+
+  &_inner {
+    @extend .wrapper_wide;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-block: var(--spacer-xl) var(--spacer-s);
+    gap: var(--spacer-m);
+
+    @media screen and (min-width: bp.$xl) {
+      padding-inline: var(--spacer-xxxl);
+    }
+
+    .backToTop {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      transform: translateY(-200%);
+
+      i {
+        background-color: var(--color-gold-lustre);
+        min-width: 0;
+        width: 24px;
+        height: 20px;
+      }
+
+      span {
+        display: block;
+      }
+    }
+
+    .logo {
+      // background line
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -50vw;
+        width: 100in;
+        height: 1px;
+        background-color: var(--color-gold-lustre);
+        z-index: -1;
+
+        @media screen and (min-width: bp.$xs) {
+          top: 48%;
+        }
+
+        @media screen and (min-width: bp.$sm) {
+          top: 46%;
+        }
+      }
+    }
+
+    img {
+      max-width: 45vw;
+    }
+  }
+}

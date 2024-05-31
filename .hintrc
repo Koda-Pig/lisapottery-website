@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "mask-size",
+          "mask-repeat",
+          "mask-image",
+          "mask-position",
+          "backdrop-filter",
+          "scrollbar-gutter",
+          "scrollbar-gutter",
+          "scrollbar-width",
+          "scrollbar-width",
+          "scrollbar-width"
+        ]
+      }
+    ]
+  }
+}

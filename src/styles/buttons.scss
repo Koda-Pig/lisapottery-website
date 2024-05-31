@@ -1,0 +1,22 @@
+.button {
+  border-radius: 8px;
+  text-transform: uppercase;
+  color: var(--color-gold-lustre);
+  height: 48px;
+  min-width: 160px;
+  width: max-content;
+  max-width: 100%;
+  display: grid;
+  place-items: center;
+  font-family: var(--secondary-font);
+  border: 2px solid;
+  transition-property: color, background-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    color: white;
+    border-color: var(--color-gold-lustre);
+    background-color: var(--color-gold-lustre);
+  }
+}

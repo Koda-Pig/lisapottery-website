@@ -1,0 +1,200 @@
+@use "../../styles/layout" as layout;
+@use "../../styles/breakpoints" as bp;
+@use "../../styles/buttons" as buttons;
+
+%logo-styles {
+  height: auto;
+  max-height: 100%;
+  max-width: 60vw;
+}
+
+.header {
+  --desktop-transition: ease-out 0.3s;
+
+  &_inner {
+    @extend .wrapper_wide;
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--spacer-xl);
+  }
+
+  .logo {
+    svg {
+      @extend %logo-styles;
+      max-height: var(--header-height);
+    }
+  }
+
+  .menu {
+    &_inner {
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    li {
+      padding: var(--spacer-xs);
+      font-size: 1.2rem;
+      font-family: var(--secondary-font);
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    .cta {
+      @extend .button;
+      line-height: 2.5em;
+    }
+  }
+
+  // mobile
+  @media screen and (max-width: calc(bp.$xl + 1px)) {
+    .menu {
+      position: fixed;
+      inset: 0;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+      transition: 0.3s background-color ease-in-out;
+
+      &.open {
+        background-color: rgba(0, 0, 0, 0.5);
+        pointer-events: all;
+
+        .menu_inner {
+          transform: translateX(0);
+        }
+      }
+
+      &_inner {
+        padding-inline: 160px var(--spacer-xxl);
+        padding-block: 100px 0;
+        transition: 0.3s transform ease-in-out;
+        transform: translateX(100%);
+        flex-direction: column;
+        align-items: end;
+        background-color: #fffd;
+        backdrop-filter: blur(3px);
+        gap: var(--spacer-xxs);
+        width: max-content;
+        max-width: 100%;
+        height: 100%;
+        margin-left: auto;
+      }
+    }
+
+    .hamburger {
+      position: fixed;
+      top: var(--spacer-s);
+      right: var(--spacer-s);
+      z-index: 2;
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      background-color: var(--color-porcelain);
+      border: 1px solid var(--color-gold-lustre-10);
+      border-radius: 50%;
+      box-shadow: 0 4px 4px var(--color-gold-lustre-10),
+        inset 0 4px 4px var(--color-gold-lustre-10);
+
+      svg {
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        transition-duration: 0.3s;
+
+        path {
+          fill: none;
+          stroke: var(--color-gold-lustre);
+          stroke-width: 5;
+          transition-duration: 0.3s;
+          stroke-linecap: round;
+        }
+
+        .top {
+          stroke-dasharray: 40 160;
+        }
+        .middle {
+          transform-origin: 50%;
+          stroke-dasharray: 40 142;
+        }
+        .bottom {
+          transform-origin: 50%;
+          stroke-dasharray: 40 85;
+        }
+      }
+
+      &.open {
+        svg {
+          --tw-rotate: 45deg;
+          transform: rotate(var(--tw-rotate));
+
+          .top {
+            stroke-dashoffset: -64px;
+          }
+          .middle {
+            --tw-rotate: 90deg;
+            transform: rotate(var(--tw-rotate));
+          }
+          .bottom {
+            stroke-dashoffset: -64px;
+          }
+        }
+      }
+    }
+  }
+
+  // desktop
+  @media screen and (min-width: bp.$xl) {
+    background-color: white;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: top var(--desktop-transition);
+
+    &.shiftToTop {
+      top: -30px;
+    }
+
+    &_inner {
+      margin-bottom: var(--spacer-xxs);
+      padding-inline: var(--spacer-xxxl);
+    }
+
+    .menu_inner {
+      gap: var(--spacer-l);
+      transition: transform var(--desktop-transition);
+
+      li {
+        padding-right: 0;
+      }
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
+}
+
+.static_logo {
+  @extend .wrapper_wide;
+  margin-block: 0;
+  padding-bottom: var(--spacer-l);
+
+  @media screen and (min-width: bp.$xl) {
+    margin-top: var(--header-height);
+    padding-inline: var(--spacer-xxxl);
+
+    svg {
+      opacity: var(--scroll-y, 1);
+    }
+  }
+
+  svg {
+    @extend %logo-styles;
+  }
+}
