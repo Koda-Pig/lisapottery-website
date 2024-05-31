@@ -198,27 +198,16 @@ export default function Home(): JSX.Element {
             <Expandable
               label="read-more-about"
               content={
-                <div>
-                  <p>
-                    I have achieved in life. Everything begins with a pencil.
-                    Clay is second nature to me. I have devoted myself
-                    wholeheartedly to its service. The work of a Potter is very
-                    close to my heart and I have drawn numerous parallels
-                    between humans and pots. Both are vessels, are made from a
-                    point of center, fashioned from the inside out, endure
-                    vulnerability when opening up and finally, must go through
-                    the fire to be transformed.
-                  </p>
-                  <p>
-                    Clay is second nature to me. I have devoted myself
-                    wholeheartedly to its service. The work of a Potter is very
-                    close to my heart and I have drawn numerous parallels
-                    between humans and pots. Both are vessels, are made from a
-                    point of center, fashioned from the inside out, endure
-                    vulnerability when opening up and finally, must go through
-                    the fire to be transformed.
-                  </p>
-                </div>
+                <p>
+                  I have achieved in life. Everything begins with a pencil. Clay
+                  is second nature to me. I have been involved with so many
+                  different aspects of the pottery making business in my
+                  lifetime. The work of a Potter is very close to my heart and I
+                  have drawn numerous parallels between humans and pots. Both
+                  are vessels, are made from a point of center, fashioned from
+                  the inside out, endure vulnerability when opening up and
+                  finally, must go through the fire to be transformed.
+                </p>
               }
             />
 
