@@ -50,3 +50,4 @@ https://www.figma.com/design/qtT9y2OQcYQSf35XBu1NpP/Lisa-Website?node-id=197-87&
 - [ ] properly size and configure <Image>'s
 - [x] collection one image is off size
 - [ ] figure out nice hover effect for gallery
+- [ ] Add google analytics
