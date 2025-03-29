@@ -1,0 +1,29 @@
+.button {
+  padding: 0;
+  height: auto;
+  background-color: transparent;
+  margin-top: var(--spacer-xs);
+  cursor: pointer;
+  display: flex;
+  gap: var(--spacer-xs);
+  align-items: center;
+  font-family: var(--secondary-font);
+
+  &.open {
+    i {
+      transform: rotate3d(1, 0, 0, 0.5turn);
+    }
+  }
+
+  &.centered {
+    width: 100%;
+    justify-content: center;
+  }
+
+  i {
+    mask-size: 24px;
+    mask-position: center;
+    transition: 0.3s transform ease-in-out;
+    background-color: var(--color-iron-ore);
+  }
+}
