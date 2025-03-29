@@ -8,6 +8,7 @@
   gap: var(--spacer-xs);
   align-items: center;
   font-family: var(--secondary-font);
+  transition: opacity 0.2s ease-in-out;
 
   &.open {
     i {
@@ -20,5 +21,22 @@
     mask-position: center;
     transition: 0.3s transform ease-in-out;
     background-color: var(--color-iron-ore);
+  }
+
+  &.animating {
+    opacity: 0;
+  }
+}
+
+.word {
+  opacity: 0;
+  transition: opacity var(--transition-duration, 300ms) ease-out;
+  animation: fadeIn var(--transition-duration, 300ms) forwards;
+  animation-delay: var(--transition-delay, 0ms);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }

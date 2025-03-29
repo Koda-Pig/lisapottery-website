@@ -66,15 +66,31 @@ export const TruncatedText = ({
         aria-labelledby={id}
         aria-hidden={!open}
       >
-        {textArray.slice(0, displayedWords).join(" ")}
+        {textArray.slice(0, displayedWords).map((word, index) => (
+          <>
+            <span
+              key={index}
+              className={styles.word}
+              style={{
+                transitionDuration: `200ms`,
+                transitionDelay: `${index * 15}ms`
+              }}
+            >
+              {word}
+            </span>{" "}
+          </>
+        ))}
         {!open && <>...</>}
       </section>
       <button
         type="button"
-        className={`link ${styles.button} ${open ? styles.open : ""}`}
+        className={`link ${styles.button} ${open ? styles.open : ""} ${
+          animating ? styles.animating : ""
+        }`}
         onClick={handleClick}
         aria-controls={id}
         aria-expanded={open}
+        disabled={animating}
       >
         {open ? "Read less" : "Read more"}
       </button>
