@@ -19,25 +19,22 @@ const useIntersectionObserver = (
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            callback(entry.target as HTMLElement);
-          }
+          if (!entry.isIntersecting) return;
+          callback(entry.target as HTMLElement);
         });
       },
       { threshold: 0.001 }
     );
 
     elements.forEach((element) => {
-      if (element.current) {
-        observer.observe(element.current);
-      }
+      if (!element.current) return;
+      observer.observe(element.current);
     });
 
     return () => {
       elements.forEach((element) => {
-        if (element.current) {
-          observer.unobserve(element.current);
-        }
+        if (!element.current) return;
+        observer.unobserve(element.current);
       });
     };
   }, [elements, callback]);
