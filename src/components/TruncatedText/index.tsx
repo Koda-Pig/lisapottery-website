@@ -6,14 +6,12 @@ import { Icon } from "@/components/Icon";
 interface TruncatedTextProps {
   text: string;
   maxWords?: number;
-  icon?: boolean;
   animationSpeed?: number; // milliseconds per word
 }
 
 export const TruncatedText = ({
   text,
   maxWords = 31,
-  icon = false,
   animationSpeed = 10 // default animation speed
 }: TruncatedTextProps) => {
   const [displayedWords, setDisplayedWords] = useState(maxWords);
@@ -62,7 +60,7 @@ export const TruncatedText = ({
   }
 
   return (
-    <div className={styles.expandable}>
+    <>
       <section
         className={`${styles.wrapper} ${open ? styles.open : ""}`}
         aria-labelledby={id}
@@ -79,8 +77,7 @@ export const TruncatedText = ({
         aria-expanded={open}
       >
         {open ? "Read less" : "Read more"}
-        {icon && <Icon iconName={"chevron-down"} />}
       </button>
-    </div>
+    </>
   );
 };
