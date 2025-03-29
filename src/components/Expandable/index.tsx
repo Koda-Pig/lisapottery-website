@@ -21,6 +21,13 @@ export const Expandable = ({
 
   return (
     <div className={styles.expandable}>
+      <section
+        className={`${styles.wrapper} ${open ? styles.open : ""}`}
+        aria-labelledby={id}
+        aria-hidden={!open}
+      >
+        {content}
+      </section>
       <button
         type="button"
         className={`link ${styles.button} ${open ? styles.open : ""} ${
@@ -33,13 +40,6 @@ export const Expandable = ({
         {open ? "Read less" : "Read more"}
         {icon && <Icon iconName={"chevron-down"} />}
       </button>
-      <section
-        className={`${styles.wrapper} ${open ? styles.open : ""}`}
-        aria-labelledby={id}
-        aria-hidden={!open}
-      >
-        {content}
-      </section>
     </div>
   );
 };
