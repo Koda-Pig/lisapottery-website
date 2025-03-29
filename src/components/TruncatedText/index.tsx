@@ -12,7 +12,7 @@ interface TruncatedTextProps {
 export const TruncatedText = ({
   text,
   maxWords = 31,
-  animationSpeed = 10 // default animation speed
+  animationSpeed = 15 // default animation speed
 }: TruncatedTextProps) => {
   const [displayedWords, setDisplayedWords] = useState(maxWords);
   const [open, setOpen] = useState(false);
@@ -60,12 +60,8 @@ export const TruncatedText = ({
   }
 
   return (
-    <>
-      <section
-        className={`${styles.wrapper} ${open ? styles.open : ""}`}
-        aria-labelledby={id}
-        aria-hidden={!open}
-      >
+    <div className={`${styles.wrapper} ${open ? styles.open : ""}`}>
+      <div aria-labelledby={id} aria-hidden={!open}>
         {textArray.slice(0, displayedWords).map((word, index) => (
           <>
             <span
@@ -80,13 +76,11 @@ export const TruncatedText = ({
             </span>{" "}
           </>
         ))}
-        {!open && <>...</>}
-      </section>
+        {!open && <span className={styles.word}>...</span>}
+      </div>
       <button
         type="button"
-        className={`link ${styles.button} ${open ? styles.open : ""} ${
-          animating ? styles.animating : ""
-        }`}
+        className={`link ${styles.button}`}
         onClick={handleClick}
         aria-controls={id}
         aria-expanded={open}
@@ -94,6 +88,6 @@ export const TruncatedText = ({
       >
         {open ? "Read less" : "Read more"}
       </button>
-    </>
+    </div>
   );
 };

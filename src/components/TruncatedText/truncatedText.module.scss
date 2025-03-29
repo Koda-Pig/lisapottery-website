@@ -1,38 +1,46 @@
-.button {
-  padding: 0;
-  height: auto;
-  background-color: transparent;
-  margin-top: var(--spacer-xs);
-  cursor: pointer;
-  display: flex;
-  gap: var(--spacer-xs);
-  align-items: center;
-  font-family: var(--secondary-font);
-  transition: opacity 0.2s ease-in-out;
+.wrapper {
+  --animation-speed: 10ms;
 
-  &.open {
+  .button {
+    padding: 0;
+    height: auto;
+    background-color: transparent;
+    margin-top: var(--spacer-xs);
+    cursor: pointer;
+    display: flex;
+    gap: var(--spacer-xs);
+    align-items: center;
+    font-family: var(--secondary-font);
+    transition: opacity 0.2s ease-in-out;
+
     i {
-      transform: rotate3d(1, 0, 0, 0.5turn);
+      mask-size: 24px;
+      mask-position: center;
+      transition: 0.3s transform ease-in-out;
+      background-color: var(--color-iron-ore);
     }
   }
 
-  i {
-    mask-size: 24px;
-    mask-position: center;
-    transition: 0.3s transform ease-in-out;
-    background-color: var(--color-iron-ore);
+  .word {
+    opacity: 0;
+    animation: fadeIn var(--animation-speed) forwards;
+  }
+
+  &.open {
+    --animation-speed: 200ms;
+
+    .button {
+      i {
+        transform: rotate3d(1, 0, 0, 0.5turn);
+      }
+    }
   }
 
   &.animating {
-    opacity: 0;
+    .button {
+      opacity: 0;
+    }
   }
-}
-
-.word {
-  opacity: 0;
-  transition: opacity var(--transition-duration, 300ms) ease-out;
-  animation: fadeIn var(--transition-duration, 300ms) forwards;
-  animation-delay: var(--transition-delay, 0ms);
 }
 
 @keyframes fadeIn {
