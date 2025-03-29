@@ -3,7 +3,6 @@ import styles from "./page.module.scss";
 import Image from "next/image";
 import { useEffect, useRef, MutableRefObject } from "react";
 import { Introduction } from "@/components/Introduction";
-import { Expandable } from "@/components/Expandable";
 import { Icon } from "@/components/Icon";
 import { TruncatedText } from "@/components/TruncatedText";
 import { Collection } from "@/components/Collection";
@@ -191,26 +190,6 @@ export default function Home(): JSX.Element {
             className={`slide-up ${styles.about} ${styles.text_section}`}
           >
             <h2>About</h2>
-            {/* <p>
-              My mother taught me to draw in the sand with a stick. As a little
-              girl I fell in love with the mark making process and have used it
-              for everything...
-            </p>
-            <Expandable
-              label="read-more-about"
-              content={
-                <p>
-                  I have achieved in life. Everything begins with a pencil. Clay
-                  is second nature to me. I have been involved with so many
-                  different aspects of the pottery making business in my
-                  lifetime. The work of a Potter is very close to my heart and I
-                  have drawn numerous parallels between humans and pots. Both
-                  are vessels, are made from a point of center, fashioned from
-                  the inside out, endure vulnerability when opening up and
-                  finally, must go through the fire to be transformed.
-                </p>
-              }
-            /> */}
             <TruncatedText
               text="My mother taught me to draw in the sand with a stick. As a little girl I fell in love with the mark making process and have used it for everything I have achieved in life. Everything begins with a pencil. Clay is second nature to me. I have been involved with so many different aspects of the pottery making business in my lifetime. The work of a Potter is very close to my heart and I have drawn numerous parallels between humans and pots. Both are vessels, are made from a point of center, fashioned from the inside out, endure vulnerability when opening up and finally, must go through the fire to be transformed."
               maxWords={31}

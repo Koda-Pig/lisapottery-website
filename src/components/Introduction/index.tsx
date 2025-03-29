@@ -1,5 +1,6 @@
 import styles from "./introduction.module.scss";
 import { Expandable } from "@/components/Expandable";
+import { TruncatedText } from "@/components/TruncatedText";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -48,19 +49,7 @@ export const Introduction: FC<IntroductionProps> = ({
       </div>
 
       <div className={`${styles.text_section} ${styles.block_3}`}>
-        <p>{text1.trim()}...</p>
-        <Expandable
-          label="read-more-introduction"
-          content={
-            <div>
-              <p>{text2}</p>
-
-              <p className={styles.hideOnMobile}>
-                {text3} {text4}
-              </p>
-            </div>
-          }
-        />
+        <TruncatedText text={[text1, text2].join(" ")} maxWords={31} />
       </div>
 
       <div className={`${styles.image_pair} ${styles.block_4}`} id="image-pair">
@@ -84,8 +73,7 @@ export const Introduction: FC<IntroductionProps> = ({
         className={`${styles.text_section} ${styles.block_5} `}
         id="text-section"
       >
-        <p>{text3.trim()}...</p>
-        <Expandable label="read-more-goals" content={<p>{text4}</p>} />
+        <TruncatedText text={[text3, text4].join(" ")} maxWords={31} />
       </div>
     </div>
   );

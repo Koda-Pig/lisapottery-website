@@ -7,12 +7,14 @@ interface TruncatedTextProps {
   text: string;
   maxWords?: number;
   animationSpeed?: number; // milliseconds per word
+  className?: string;
 }
 
 export const TruncatedText = ({
   text,
   maxWords = 31,
-  animationSpeed = 15 // default animation speed
+  animationSpeed = 15, // default animation speed
+  className = ""
 }: TruncatedTextProps) => {
   const [displayedWords, setDisplayedWords] = useState(maxWords);
   const [open, setOpen] = useState(false);
@@ -60,7 +62,9 @@ export const TruncatedText = ({
   }
 
   return (
-    <div className={`${styles.wrapper} ${open ? styles.open : ""}`}>
+    <div
+      className={`${styles.wrapper} ${open ? styles.open : ""} ${className}`}
+    >
       <div aria-labelledby={id} aria-hidden={!open}>
         {textArray.slice(0, displayedWords).map((word, index) => (
           <>
